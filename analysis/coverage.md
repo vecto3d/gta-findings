@@ -10,7 +10,7 @@ Not everything here is known to the same standard. Three distinct levels:
 | Depth | Meaning | Scripts |
 |---|---|---:|
 | **Parsed** | Every function split out, deduped, every string typed by its consuming native | 1,156 |
-| **Read** | Source opened and followed line by line | 17 |
+| **Read** | Source opened and followed line by line | 33 |
 | **Verified** | Behaviour confirmed by building it and running it | 1 |
 
 Every script in this repo is **parsed**. Almost none are **read**.
@@ -31,7 +31,7 @@ nothing was skipped. For each script this yields, restricted to code unique to i
 
 This is exhaustive for **identifiers**. It is silent on **logic**.
 
-## Read: 17
+## Read: 33
 
 Fully read, unique code start to finish:
 
@@ -45,6 +45,14 @@ Fully read, unique code start to finish:
 | `ob_poledancer.c` | 151 | Ambient performer, de-synced loops |
 | `ob_mp_bed_low.c` | 332 | Full synchronised-scene interaction |
 | `ob_mr_raspberry_jam.c` | 396 | The shared safehouse activity engine |
+
+Read in a second pass, selected by asset density in the portable categories:
+
+`am_joyrider.c` · `minigame_stats_tracker.c` · `am_mp_hotwire.c` · `abigail1.c` ·
+`re_yetarian.c` · `heist_ctrl_jewel.c` · `heist_ctrl_docks.c` · `re_bus_tours.c` ·
+`apptextmessage.c` · `am_ammo_drop.c` · `forsalesigns.c` · `pickupvehicles.c` ·
+`player_scene_f_taxi.c` · `player_scene_m_shopping.c` · `launcher_hunting.c` ·
+`appvlsi.c`
 
 Read in the parts that mattered, not end to end:
 
