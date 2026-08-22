@@ -142,3 +142,41 @@ set piece.
 - [../reference/waypoint-recording-index](../reference/waypoint-recording-index.md)
 - [street-characters](street-characters.md)
 - [../reference/task-vocabulary](../reference/task-vocabulary.md)
+
+
+## The networked equivalent: `am_joyrider.c`
+
+Read in full (772 unique lines). The freemode counterpart to the `re_*` family, and
+useful for two things the single-player events do not show.
+
+**Host and participant split.** The script runs two state machines side by side. Every
+participant runs one indexed by `PARTICIPANT_ID_TO_INT()`, and a second, guarded by
+`NETWORK_IS_HOST_OF_THIS_SCRIPT()`, runs only on the host and owns the shared event
+state. Entities are referenced through `NET_TO_PED` and `NET_TO_VEH` throughout, never
+by local handle, and `NETWORK_DOES_NETWORK_ID_EXIST` guards each use.
+
+FiveM inverts this — the server is authoritative rather than a promoted peer — but the
+split itself is the right shape: shared state owned in one place, presentation run by
+everyone.
+
+**Two natives worth having:**
+
+    SET_VEHICLE_MODEL_IS_SUPPRESSED(model, true)
+
+Removes a model from ambient traffic while the event runs, so the scripted car is the
+only one of its kind on the road. Without it, a scripted `infernus` is just another
+car in traffic.
+
+    IS_VEHICLE_STUCK_TIMER_UP(veh, type, ms)
+
+Stuck detection with the engine's own timer, rather than polling positions yourself.
+Any AI driving script needs this and most reimplement it badly.
+
+The joyrider picks from a pool of fast cars — `infernus`, `superd`, `stingergt`,
+`monroe`, `feltzer2`, `entityxf`, `cogcabrio` — and a wide pool of ambient ped models,
+runs the `JOYRIDER_RADIO_SCENE` audio scene, and arms the driver with a pistol,
+micro SMG or pump shotgun.
+
+`pickupvehicles.c` adds one more: `GET_CAUSE_OF_MOST_RECENT_FORCE_CLEANUP()` lets a
+script find out *why* it was cleaned up and restore state selectively rather than
+always starting fresh.
