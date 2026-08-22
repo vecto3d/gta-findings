@@ -594,3 +594,204 @@ Recorded so they are not repeated:
   `scr_indep_wheelsmoke`, `scr_mp_tankbattle`, `scr_xm_stealcar`,
   `scr_bike_contraband`, `scr_impexp_ploughed`, `scr_tn_phantom`. Useful only if
   chasing a specific effect; no general mechanics.
+
+---
+
+# Full native-family sweep
+
+Systematic counts across all 1156 scripts. Numbers are call sites, so they show
+how heavily R* leans on something, not how many distinct scripts use it.
+
+## Render targets — drawing to an in-world screen
+
+`REGISTER_NAMED_RENDERTARGET` names. This is how anything appears on a screen
+prop, and the name must match the model:
+
+| Target | Uses | What it is |
+|---|---|---|
+| `blimp_text` | 14 | The blimp sign |
+| `tvscreen` | 8 | TVs |
+| `npcphone` | 7 | NPC phone display |
+| `Prop_x17DLC_Monitor_Wall_01a` | 4 | Facility monitor wall |
+| `Big_Disp` | 4 | Large display |
+| `digiscanner` | 3 | Scanner |
+| `W_AM_HackDevice_M32` | 3 | Hacking device |
+| `taxi` | 2 | Taxi screen |
+| `safe_01a`, `xm3_safe_01a` | 2, 1 | Safe displays |
+| `club_computer`, `prop_clubhouse_laptop_01a` | 2 | Club laptop |
+| `osp_panel`, `prop_ex_office_text`, `prop_ex_computer_screen` | 2 | Office screens |
+| `PBus_Screen` | 2 | Party bus |
+| `submarine_table`, `prop_x17_p_01` | 1 | Planning tables |
+
+Pair a render target with one of the terminal scaleforms already catalogued and
+you have a working in-world computer with no NUI.
+
+## Audio
+
+### Sound sets, by call count
+
+`HUD_FRONTEND_DEFAULT_SOUNDSET` (6499), `GTAO_Script_Doors_Faded_Screen_Sounds`
+(4497), `dlc_xm_facility_entry_exit_sounds` (2482), `GTAO_Vision_Modes_SoundSet`
+(1894), `WEB_NAVIGATION_SOUNDS_PHONE` (1137), `MP_PROPERTIES_ELEVATOR_DOORS`
+(592), `HUD_FREEMODE_SOUNDSET` (490), `HintCamSounds` (469),
+`GTAO_FM_Events_Soundset` (427), `HUD_MINI_GAME_SOUNDSET` (304),
+`PLAYER_SWITCH_CUSTOM_SOUNDSET` (260), `MP_MISSION_COUNTDOWN_SOUNDSET` (240),
+`MP_SNACKS_SOUNDSET` (216), `MP_CCTV_SOUNDSET` (214), `HUD_AWARDS` (178),
+`WastedSounds` (156).
+
+`HUD_MINI_GAME_SOUNDSET` and `MP_MISSION_COUNTDOWN_SOUNDSET` are the ones to
+reach for when building an activity.
+
+### Minigame audio banks
+
+Load these before a minigame or the sounds are silent:
+
+- `DLC_MPHEIST\HEIST_FLEECA_DRILL` and `_DRILL_2` — drilling
+- `DLC_HEIST3\HEIST_FINALE_LASER_DRILL` — laser drill
+- `DLC_MPHEIST/HEIST_HACK_SNAKE` — the snake hacking minigame
+- `DLC_MPHEIST/HEIST_USE_KEYPAD` — keypad
+- `DLC_HEIST3/Door_Hacking` — door hack
+- `DLC_24-2/DLC_24-2_Circuit_Hack` — circuit hack
+- `DLC_CHRISTMAS2017/XM_Silo_Laser_Hack` — silo laser
+- `SAFE_CRACK` — pairs with the `mini@safe_cracking` anims
+- `SAFEHOUSE_FRANKLIN_USE_BONG`, `SAFEHOUSE_MICHAEL_SIT_SOFA`,
+  `SAFEHOUSE_TREVOR_DRINK_WHISKEY` — the safehouse activities
+- `VEHICLE_SHOP_HUD_1` / `_2`, `DLC_GTAO/SNACKS`, `TIME_LAPSE`, `HUD_321_GO`
+
+## Sync scenes — the most-used mechanic in the repo
+
+`TASK_SYNCHRONIZED_SCENE` (7998), `CREATE_SYNCHRONIZED_SCENE` (4747),
+`NETWORK_CREATE_SYNCHRONISED_SCENE` (1991).
+
+R* coordinates almost every multi-ped animation this way rather than with
+separate `TASK_PLAY_ANIM` calls. Anything where two entities must move together
+— the CPR pair, a ped opening a door for you, any cutscene-like set piece — is a
+sync scene. The networked variant keeps it consistent for other players.
+**This is the single most transferable technique in the codebase.**
+
+## Decorators — entity state that survives ownership migration
+
+`DECOR_EXIST_ON` (23399), `DECOR_GET_INT` (16133), `DECOR_SET_INT` (5671),
+`DECOR_GET_BOOL` (1589), `DECOR_SET_BOOL` (1285), `DECOR_REGISTER` (115).
+
+Named decorators worth knowing: `MPBitset` (9814), `Player_Vehicle` (5764),
+`Veh_Modded_By_Player` (2301), `PV_Slot` (2282), `IgnoredByQuickSave` (2051),
+`Not_Allow_As_Saved_Veh` (1810), `ContrabandOwner` (1775), `Player_Thruster`
+(1592), `MLJ` (1536), `ExportVehicle` (1507), `Creator_Trailer` (1285),
+`bombdec` / `bombowner` (1178 / 1135), `Player_Hacker_Truck` (1114).
+
+FiveM has state bags now, but decorators still work and are how vanilla marks
+personal vehicles and ownership.
+
+## Doors
+
+`ADD_DOOR_TO_SYSTEM` — 1493 call sites. Gate and door models registered:
+`prop_gar_door_03_ld`, `prop_com_gar_door_01`, `prop_hw1_03_gardoor_01`,
+`prop_facgate_01` / `_01b`, `prop_lrggate_01_l` / `_r`, `prop_arm_gate_l`,
+`prop_bh1_03_gate_l` / `_r`, `prop_bh1_48_gate_1`, `prop_fnclink_03gate5`,
+`prop_abat_slide`, `hei_prop_hei_bankdoor_new`.
+
+The door system handles locking, auto-open ranges and network sync — worth using
+instead of hand-rolling door locks.
+
+## Interior entity sets
+
+`ENABLE_INTERIOR_PROP` names, used to swap interior contents at runtime:
+
+`shutter_closed` (126), `SET_ACCESS_BLOCKER` (30), `SET_VAULT_DOOR_OPEN` /
+`_CLOSED` (26 each), `SET_MOD_BLOCKER`, `SET_GAR_PODIUM_BLOCKER`,
+`SET_GAR_MOD_BLOCKER`, `SET_ARMORY_BLOCKER` (26 each), `VIP_XMAS_DECS` (20),
+`SET_PET_DOG` / `SET_PET_CAT` (18 each), `entity_set_tint_options`,
+`entity_set_office`, `entity_set_light_option_1`, `SET_ELEV_STD`,
+`SET_GAR_AI_TABLETS_01`–`03`, `SET_BASE_AI_TABLETS_01`–`03`.
+
+This is how property upgrades and decorations are toggled without loading a
+different interior.
+
+## Camera shakes
+
+`HAND_SHAKE` (1903, plus 380 more in other casings), `SMALL_EXPLOSION_SHAKE`
+(260), `JOLT_SHAKE` (251), `ROAD_VIBRATION_SHAKE` (102), `DRUNK_SHAKE` (72),
+`VIBRATE_SHAKE` (29), `SKY_DIVING_SHAKE` (29), `MEDIUM_EXPLOSION_SHAKE`,
+`LARGE_EXPLOSION_SHAKE`, `GAMEPLAY_EXPLOSION_SHAKE`.
+
+Casing is inconsistent in the originals; the names are case-insensitive.
+
+## Scenario types
+
+Most-used `TASK_START_SCENARIO_*` strings: `WORLD_HUMAN_CLIPBOARD` (104),
+`CODE_HUMAN_MEDIC_KNEEL` (82), `WORLD_HUMAN_SMOKING` (50),
+`WORLD_HUMAN_STAND_MOBILE_UPRIGHT` (47), `WORLD_HUMAN_STAND_MOBILE` (45),
+`WORLD_HUMAN_GUARD_STAND` (44), `WORLD_HUMAN_HANG_OUT_STREET` (38),
+`WORLD_HUMAN_WELDING` (35), `WORLD_HUMAN_STAND_IMPATIENT` (35),
+`WORLD_HUMAN_SMOKING_POT` (33), `WORLD_HUMAN_DRINKING` (25),
+`WORLD_HUMAN_LEANING` (16), `WORLD_HUMAN_AA_SMOKE` (16),
+`CODE_HUMAN_MEDIC_TIME_OF_DEATH` (16), `WORLD_HUMAN_SIT_UPS` (15),
+`WORLD_HUMAN_CLIPBOARD_FACILITY` (15), `WORLD_HUMAN_GUARD_STAND_ARMY` (11),
+`WORLD_HUMAN_MOBILE_FILM_SHOCKING` (8), `WORLD_HUMAN_BINOCULARS` (6),
+`WORLD_DOG_SITTING_RETRIEVER` (5), `WORLD_HUMAN_SECURITY_SHINE_TORCH` (4),
+`WORLD_HUMAN_PAPARAZZI` (4).
+
+`CODE_HUMAN_MEDIC_KNEEL` and `CODE_HUMAN_MEDIC_TIME_OF_DEATH` are the medic
+scenarios — pair them with the `mini@cpr@` anims for a full EMS scene.
+
+## Relationship groups
+
+`ENEMIES` (29), `rgh_traffic` (19), `Player Group` (19), `BUDDIES` (13),
+`TAXI_Passenger` (10), `players group` (7), `enemy group` (7),
+`instructorRelGroup` (6), `TOWBUDDIES` (6), `FRIENDLIES` (6),
+`rgFM_AiHatedByCopsAndMercs` (5), `RamageGrp` (5), `PassiveGrp` (5),
+`rgFM_AiHatePlyrLikeAllAi` (4).
+
+The `rgFM_*` names show how freemode AI hostility is modelled.
+
+## Notifications
+
+`BEGIN_TEXT_COMMAND_THEFEED_POST` (2650), ended by: `..._TICKER` (1314),
+`..._MESSAGETEXT` (868), `..._UNLOCK_TU` (536),
+`..._CREWTAG_WITH_GAME_NAME` (292), `..._CREWTAG` (167),
+`..._MESSAGETEXT_SUBTITLE_LABEL` (89), `..._UNLOCK` (28), `..._STATS` (17),
+`..._AWARD` (13).
+
+The award and unlock variants are the achievement-earned popups.
+
+## Timecycle modifiers
+
+`spectator1` (225) through `spectator10`, `CAMERA_secuirity_FUZZ` (114) and
+`CAMERA_secuirity` (97) — note the misspelling by R*, which must be reproduced
+exactly. Also `mp_x17dlc_int_02_vehicle_avenger_camera`, `mp_bkr_ware02_upgrade`
+/ `03_upgrade`, `INT_smshop_inMOD`, `Yacht_Mission_ThunderRain`,
+`DLC_mp2023_02_Maze_Shad`.
+
+The security-camera pair is what gives CCTV its look.
+
+## Pickups
+
+Most-referenced: `pickup_weapon_advancedrifle` (399), `pickup_health_standard`
+(324), `pickup_weapon_grenade` (302), `pickup_armour_standard` (280),
+`pickup_weapon_rpg` (274), `pickup_weapon_pistol` (250),
+`pickup_vehicle_custom_script` (245), `pickup_custom_script` (226),
+`pickup_vehicle_health_standard` (219), `pickup_ammo_pistol` (201),
+`pickup_vehicle_health_standard_low_glow` (189).
+
+`pickup_custom_script` and `pickup_vehicle_custom_script` are the generic
+script-defined pickups — use these for custom collectibles rather than
+repurposing a weapon pickup.
+
+## Explosions, weapons, cutscenes
+
+- `ADD_EXPLOSION` (562), `ADD_OWNED_EXPLOSION` (66), `START_SCRIPT_FIRE` (17).
+- Weapon hashes, most referenced: `weapon_unarmed` (9679) — used constantly to
+  stash the equipped weapon during an interaction, exactly as the vending
+  machine does — then `weapon_pistol` (8008), `weapon_carbinerifle` (5015),
+  `weapon_assaultrifle` (4455), `weapon_smg` (4386), `weapon_heavysniper` (4156).
+- 246 distinct cutscenes requested via `REQUEST_CUTSCENE`.
+
+## IPLs
+
+Most-toggled: `ch_cutscene_casino` (496), `smboat` (146), `hei_carrier` and
+`hei_carrier_LODLights` (140), `farmint` / `farmint_cap` (140),
+`CS1_02_cf_onmission1`–`4` (140 each), `facelobby` / `facelobbyfake` (138),
+`hei_bi_hw1_13_door` (137), `gr_Heist_Yacht2_enginrm` (137).
+
+Useful when a script needs a map piece that is not loaded by default.
