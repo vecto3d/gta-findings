@@ -1,39 +1,106 @@
 # GTA V Decompiled Scripts — FiveM Port Findings
 
 Notes from mining a full decompile of GTA V build **1.73-3889.0** (1156 scripts)
-for mechanics worth porting to FiveM. Everything quoted — anim dictionaries,
-props, scaleform names, timing values, offsets — is taken verbatim from the
-decompiled source.
-
-## Contents
-
-| File | What is in it |
-|---|---|
-| [01-repo-guide.md](01-repo-guide.md) | Repo shape, which files to avoid, duplication warnings, and the search techniques that actually surface features |
-| [02-object-interactions.md](02-object-interactions.md) | `ob_*` object brains and `re_*` random events, with the full anim and prop tables |
-| [03-vending-machine.md](03-vending-machine.md) | Complete flow of `ob_vend1.c`, ported as `od_vending`, plus the ranked list of what to port next |
-| [04-minigames.md](04-minigames.md) | Darts, golf, tennis, arm wrestling, shooting range, yoga, arcade cabinets, casino and the standalone hacking minigames |
-| [05-heists.md](05-heists.md) | Heist minigame scaleforms and the planning boards |
-| [06-jobs-and-activities.md](06-jobs-and-activities.md) | Taxi, towing, car wash, hunting, bail bonds, `am_*` activities, `gb_*` business work, rides and races |
-| [07-world-and-ambient.md](07-world-and-ambient.md) | Street characters, the Chop companion-dog system, collectible hunts, nightlife and small world systems |
-| [08-ui-and-scaleforms.md](08-ui-and-scaleforms.md) | Phone, render targets, notifications, shops, properties and creators |
-| [09-animations.md](09-animations.md) | Activity anim dictionaries including CPR and safe cracking, sync scenes, scenarios and camera shakes |
-| [10-audio.md](10-audio.md) | Sound sets and the minigame audio banks |
-| [11-natives-reference.md](11-natives-reference.md) | Decorators, doors, interior entity sets, relationship groups, timecycles, pickups, weapons, IPLs, task vocabulary, waypoint recordings and native call counts |
-| [script-inventory.md](script-inventory.md) | All 1156 scripts, grouped into categories |
+for mechanics worth porting to FiveM. One file per feature. Everything quoted —
+anim dictionaries, props, scaleform names, timing values, offsets — is taken
+verbatim from the decompiled source.
 
 ## Start here
 
-If you are looking for something to build, the strongest candidates found were:
+Strongest build candidates found, roughly easiest first:
 
-- **`atm_trigger.c`** (112K) — dedicated `ATM` scaleform, the easiest UI-bearing system
-- **`spaceshipparts.c`** / **`letterscraps.c`** (36K / 48K) — two complete collectible hunts
-- **CPR revive** — `mini@cpr@` paired anims plus the `CODE_HUMAN_MEDIC_KNEEL` scenario
-- **Safe cracking** — full dial-turning anim set and the `SAFE_CRACK` audio bank
-- **`chop.c`** (212K) — complete K9 system, including the scent-indication pose
-- **Taxi job** — `TAXI_HAIL` and `taxi_display` scaleforms, no UI to write
-- **Arcade cabinets** — sprite-drawn, and `am_mp_arcade_fortune_teller.c` is only 60K
-- **Beds** (`ob_mp_bed_*`) — reuses the vending machine skeleton almost verbatim
+- [beds.md](beds.md) — enter, loop, exit. Reuses the vending skeleton verbatim
+- [cash-register.md](cash-register.md) — ~170 lines, no animation at all
+- [atm.md](atm.md) — dedicated `ATM` scaleform, easiest UI-bearing system
+- [collectible-hunts.md](collectible-hunts.md) — two complete implementations
+- [cpr-revive.md](cpr-revive.md) — paired medic/patient anims for EMS
+- [safe-cracking.md](safe-cracking.md) — full dial-turning set, nothing missing
+- [chop-companion-dog.md](chop-companion-dog.md) — complete K9 including scent pose
+- [taxi.md](taxi.md) — two scaleforms, no UI to write
+- [arcade-cabinets.md](arcade-cabinets.md) — sprite-drawn, smallest is 60K
+
+## Object interactions
+
+Prop-triggered, the `ob_*` family. All follow one pattern.
+
+[vending-machine.md](vending-machine.md) · [beds.md](beds.md) ·
+[shower.md](shower.md) · [telescope.md](telescope.md) ·
+[jukebox.md](jukebox.md) · [cash-register.md](cash-register.md) ·
+[tv-and-channels.md](tv-and-channels.md) · [pole-dancer.md](pole-dancer.md) ·
+[safehouse-drinking.md](safehouse-drinking.md) ·
+[drunk-system.md](drunk-system.md)
+
+## Minigames and games
+
+[darts.md](darts.md) · [golf.md](golf.md) · [tennis.md](tennis.md) ·
+[arm-wrestling.md](arm-wrestling.md) ·
+[shooting-range.md](shooting-range.md) · [yoga.md](yoga.md) ·
+[pilot-school.md](pilot-school.md) ·
+[arcade-cabinets.md](arcade-cabinets.md) · [slot-machine.md](slot-machine.md) ·
+[three-card-poker.md](three-card-poker.md) ·
+[casino-table-games.md](casino-table-games.md)
+
+## Hacking and heists
+
+[word-hack.md](word-hack.md) ·
+[circuit-block-hack.md](circuit-block-hack.md) ·
+[safe-cracking.md](safe-cracking.md) ·
+[heist-minigames.md](heist-minigames.md) ·
+[heist-planning-boards.md](heist-planning-boards.md)
+
+## Jobs and work
+
+[taxi.md](taxi.md) · [towing.md](towing.md) · [car-wash.md](car-wash.md) ·
+[hunting.md](hunting.md) · [bail-bonds.md](bail-bonds.md) ·
+[vip-work.md](vip-work.md) · [business-work.md](business-work.md)
+
+## Activities and races
+
+[races.md](races.md) · [rides.md](rides.md) ·
+[freemode-activities.md](freemode-activities.md)
+
+## World and ambient life
+
+[chop-companion-dog.md](chop-companion-dog.md) ·
+[street-characters.md](street-characters.md) ·
+[street-performers.md](street-performers.md) ·
+[random-events.md](random-events.md) ·
+[collectible-hunts.md](collectible-hunts.md) ·
+[nightclub.md](nightclub.md) · [cinema.md](cinema.md) · [atm.md](atm.md) ·
+[laptop-and-terminals.md](laptop-and-terminals.md) ·
+[world-systems.md](world-systems.md)
+
+## Animation
+
+[sync-scenes.md](sync-scenes.md) — start here, it is the most-used mechanic in
+the repo · [cpr-revive.md](cpr-revive.md) ·
+[vehicle-repair.md](vehicle-repair.md) ·
+[activity-anim-dicts.md](activity-anim-dicts.md) ·
+[scenarios.md](scenarios.md) · [camera-shakes.md](camera-shakes.md)
+
+## UI and screens
+
+[render-targets.md](render-targets.md) ·
+[scaleform-catalogue.md](scaleform-catalogue.md) · [phone.md](phone.md) ·
+[notifications.md](notifications.md) · [shops.md](shops.md) ·
+[properties.md](properties.md)
+
+## Reference
+
+[audio.md](audio.md) · [decorators.md](decorators.md) · [doors.md](doors.md) ·
+[interior-entity-sets.md](interior-entity-sets.md) ·
+[pickups.md](pickups.md) ·
+[relationship-groups.md](relationship-groups.md) ·
+[timecycles.md](timecycles.md) ·
+[task-vocabulary.md](task-vocabulary.md) ·
+[waypoint-recordings.md](waypoint-recordings.md) ·
+[native-call-counts.md](native-call-counts.md)
+
+## Mining the repo
+
+[repo-guide.md](repo-guide.md) — what to avoid, duplication warnings, and the
+search techniques that actually surface features ·
+[script-inventory.md](script-inventory.md) — all 1156 scripts, categorised
 
 ## Three things that cost time
 
