@@ -85,3 +85,25 @@ touching an entity another script may own.
 
 - [sync-scenes](sync-scenes.md)
 - [animation-alignment](animation-alignment.md)
+
+
+## Getting entities back out
+
+`heist_ctrl_jewel.c` completes the picture. Registration is two-way:
+
+    REGISTER_ENTITY_FOR_CUTSCENE(entity, "Lester", 0, 0, 0)
+    ...
+    GET_ENTITY_INDEX_OF_REGISTERED_ENTITY("Lester", 0)
+
+The second call hands back the entity the cutscene is using, so the script can keep
+driving it — set visibility, config flags, or position it for the exit. Roles are
+plain names: `Lester`, `Michael`.
+
+**Props are registered too.** The script registers `prop_cs_walking_stick` under the
+role `WalkingStick_Lester`. A cutscene is not only peds; any prop that must persist
+through it gets a named role, which is how a character walks out of a cutscene still
+holding what they were holding.
+
+`HAS_THIS_CUTSCENE_LOADED` guards the start, and `SET_ENTITY_VISIBLE` plus
+`SET_PED_CONFIG_FLAG` are used either side to hide the world doubles while the
+cutscene versions play.
