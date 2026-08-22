@@ -78,3 +78,43 @@ single-player behaviour; freeze input and blur instead.
 
 - [../reference/pickups](../reference/pickups.md)
 - [../reference/scaleform-catalogue](../reference/scaleform-catalogue.md)
+
+
+## One stat series for every hunt
+
+Confirmed across the whole category: all collectible hunts write into the same
+numbered stat family.
+
+| Stat | Hunt |
+|---|---|
+| `num_hidden_packages_0` | Letter scraps |
+| `num_hidden_packages_1` | Spaceship parts |
+| `num_hidden_packages_6` | Monkey photographs |
+
+So adding a hunt means claiming the next index, not inventing storage. A server
+porting this can keep the same shape: one counter series, one shared completion
+check.
+
+## A second document viewer
+
+`shrinkletter.c` owns the `PSYCHOLOGY_REPORT` scaleform and drives it with
+`SET_PLAYER_NAME` alongside the same `SET_LETTER_TEXT` method the letter scraps use.
+Two different movies, one text-setting convention — useful if you want a second
+readable style without building anything.
+
+## Pickup creation, both forms
+
+`underwaterpickups.c` uses both:
+
+    CREATE_PICKUP(type, x, y, z, flags, amount, ...)
+    CREATE_PICKUP_ROTATE(type, x, y, z, rx, ry, rz, flags, amount, ..., customModel)
+
+The lifetime argument is either a millisecond timeout or `-1` to persist. The rotate
+form is the one that accepts a custom display model, as covered in
+[random-events](random-events.md).
+
+## Filters as feedback
+
+`murdermystery.c` plays `"ON"` from the `NOIR_FILTER_SOUNDS` soundset when its
+black-and-white investigation filter engages. Pairing a timecycle or filter change
+with its own sound is a small touch that makes a mode change read as deliberate.
