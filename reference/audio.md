@@ -49,3 +49,38 @@ mechanic runs, or it is silent.
 `GENERIC_SHOCKED_HIGH`, `GENERIC_CURSE_MED`, `GENERIC_FRIGHTENED_MED`,
 `GENERIC_HI`, `BUMP`, `CHAT_STATE`, `KIFFLOM_GREET`, `ARENA_ANNOUNCE1`,
 plus the `SHOP_*` family listed in [shops.md](../features/shops.md).
+
+
+## Audio scene variables: the underused mechanism
+
+Surveyed across `carsteal2.c`, `ob_jukebox.c`, `drunk_controller.c` and the race
+scripts.
+
+An audio scene is not just an on/off state. A scene can expose **named float
+variables** that a script writes every frame, and the mix responds continuously:
+
+    START_AUDIO_SCENE("CAR_2_HELI_FILTERING")
+    SET_AUDIO_SCENE_VARIABLE("CAR_2_HELI_FILTERING", "HeliFiltering", GET_ENTITY_SPEED(veh))
+
+Here the filtering on a helicopter chase is driven directly by the vehicle's speed.
+Nothing is faded by a timer; the mix tracks a live value.
+
+Confirmed variable names:
+
+| Scene | Variable | Driven by |
+|---|---|---|
+| `CAR_2_HELI_FILTERING` | `HeliFiltering` | vehicle speed |
+| `dlc_ch_arcade_music_volume` | `ArcadeRadioVolumeDucking` | distance and context |
+
+The same idea appears without a named variable in `drunk_controller.c`, which scales
+`SET_CAM_SHAKE_AMPLITUDE` and `SET_TIMECYCLE_MODIFIER_STRENGTH` from a drunkenness
+value each frame. Camera shake amplitude and timecycle strength are both continuous
+inputs, not switches.
+
+That is the general pattern worth taking: **prefer a driven value over a triggered
+state.** It is why the game's transitions feel analogue rather than stepped.
+
+Other scenes seen: `RACES_SLIPSTREAM_SCENE`, `CAR_WASH_SCENE`, `ATM_PLAYER_SCENE`,
+`TREVOR_SAFEHOUSE_ACTIVITIES_SCENE`, `FRANKLIN_SAFEHOUSE_ACTIVITIES_SCENE`,
+`MP_CELEB_SCREEN_SCENE`, `dlc_aw_arena_speech_ducking_scene`,
+`Ls_Car_Meet_Merch_Shop_Scene`, `CAR_3_GO_TO_GARAGE`.
