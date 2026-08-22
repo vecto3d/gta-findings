@@ -1,0 +1,40 @@
+# player_scene_m_shopping.c
+
+Shops script. 39 anim dicts; 3 models.
+
+| | |
+|---|---|
+| Category | Shops |
+| Total lines | 12,601 |
+| Functions | 173 (16 unique, 157 shared) |
+| Unique lines | 1,333 (10.6% of file) |
+
+## Assets
+
+**Animation dictionaries** (39) - `SWITCH@FRANKLIN@GANG_TAUNT_P3`, `SWITCH@TREVOR@BED`, `SWITCH@TREVOR@FLOYD_CRYING`, `SWITCH@MICHAEL@BEDROOM`, `SWITCH@MICHAEL@BEDROOM2`, `SWITCH@MICHAEL@SITTING`, `SWITCH@MICHAEL@ON_SOFA`, `SWITCH@MICHAEL@CAFE`, `SWITCH@MICHAEL@ARGUE_WITH_AMANDA`, `SWITCH@MICHAEL@AMANDA_EXITS_CAR`, `SWITCH@MICHAEL@RONEX_IG_5_P2`, `SWITCH@MICHAEL@OPENS_DOOR_FOR_AMA`, `SWITCH@MICHAEL@DROPPING_OFF_JMY`, `SWITCH@MICHAEL@TRACY_EXITS_CAR`, `SWITCH@MICHAEL@GETS_READY`, `SWITCH@MICHAEL@RESTAURANT`, `SWITCH@MICHAEL@AROUND_THE_TABLE_SELFISH`, `SWITCH@MICHAEL@LOUNGE_CHAIRS`, `SWITCH@MICHAEL@PROSTITUTE`, `SWITCH@MICHAEL@ON_SET_W_JMY`, `SWITCH@MICHAEL@GAMING_W_JMY`, `SWITCH@MICHAEL@AMA_TENNIS`, `SWITCH@FRANKLIN@PLAYS_W_DOG`, `SWITCH@FRANKLIN@TANISHA_ARGUE`, `SWITCH@FRANKLIN@BYE_TAXI`, `SWITCH@FRANKLIN@PICKUP_LINE`, `SWITCH@FRANKLIN@GANG_TAUNT_P1`, `SWITCH@FRANKLIN@GANG_TAUNT_P5`, `SWITCH@FRANKLIN@DISPENSARY`, `SWITCH@FRANKLIN@002110_04_MAGD_3_WEED_EXCHANGE`, `SWITCH@TREVOR@BAR`, `SWITCH@TREVOR@CHASE_STRIPPERS`, `SWITCH@MICHAEL@PIER`, `SWITCH@TREVOR@KO_NEIGHBOUR`, `SWITCH@TREVOR@BLOCK_CAMERA`, `SWITCH@TREVOR@GUITAR_BEATDOWN`, `SWITCH@TREVOR@BEAR_IN_FLOYDS_FACE`, `SWITCH@TREVOR@BEAR_FLOYDS_FACE_SMELL`, `SWITCH@TREVOR@PINEAPPLE`
+
+**Models and props** (3) - `PROP_HUMAN_SEAT_SUNLOUNGER`, `prop_patio_lounger1`, `prop_chateau_chair_01`
+
+**Text labels** (6) - `NULL`, `MICHAEL`, `FMMAUD`, `FRANKLIN`, `TREVOR`, `IDLE`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`GET_ENTITY_COORDS` (14), `PLAYER_PED_ID` (12), `VDIST2` (7), `CLEAR_PED_TASKS` (6), `TASK_FOLLOW_NAV_MESH_TO_COORD` (6), `DISABLE_CONTROL_ACTION` (6), `GET_RANDOM_FLOAT_IN_RANGE` (5), `IS_SYNCHRONIZED_SCENE_RUNNING` (4), `IS_PED_RAGDOLL` (4), `IS_PED_GETTING_UP` (4), `DOES_ENTITY_EXIST` (4), `WAIT` (3), `SET_ENTITY_AS_MISSION_ENTITY` (3), `GET_SCRIPT_TASK_STATUS` (3), `IS_ENTITY_PLAYING_ANIM` (3), `FORCE_PED_MOTION_STATE` (3), `CLEAR_RAGDOLL_BLOCKING_FLAGS` (3), `GET_GAME_TIMER` (3), `IS_PED_INJURED` (2), `DELETE_PED` (2), `STOP_SYNCHRONIZED_ENTITY_ANIM` (2), `SET_PED_MOVE_ANIMS_BLEND_OUT` (2), `VMAG` (2), `PED_HAS_USE_SCENARIO_TASK` (2), `HAS_ENTITY_BEEN_DAMAGED_BY_ENTITY` (2), `IS_ENTITY_ON_SCREEN` (2), `SET_BIT` (2), `SET_PED_CONFIG_FLAG` (2), `HAS_FORCE_CLEANUP_OCCURRED` (1), `IS_ENTITY_ON_FIRE` (1)
+
+## Tuning constants
+
+Float literals in unique code: distances, timings, blend values.
+
+`0.1f` x5 · `0.75f` x2 · `0.25f` x1 · `1.25f` x1
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`MotionState_Walk`, `_M0`, `_T0`, `BED_LOOP_Amanda`, `002110_04_MAGD_3_WEED_EXCHANGE_SHOPKEEPER`, `pier_lean_smoke_idle`, `Bed_Sleep_FLOYD`, `Console_LOOP_FLOYD`, `ped dead baby, ped dead`, `ped on fire`, `loop or exit synch started`, `not playing exit synch anim`, `WalkInterruptible`, `DISMISS_MICHAEL`, `AMANDA_NORMAL`, `WalkInterruptible phase reached`, `not playing synch scene (navmesh)`, `not playing synch scene (scenario)`, `not playing synch scene (anim)`, `not in vehicle`, `not using scenario`, `flee to navmesh`, `FRIEND_FOLLOWED_BY_PLAYER`, `HIT_BY_PLAYER`, `FMM_0`, `FMM_1`, `FMM_2`, `FMM_3`, `FMM_4`, `FMF_0`
+
+---
+
+Source: `decompiled_scripts/player_scene_m_shopping.c`

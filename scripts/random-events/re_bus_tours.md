@@ -1,0 +1,56 @@
+# re_bus_tours.c
+
+Random events script. 4 developer state labels recovered; 1 anim dicts; 58 models.
+
+| | |
+|---|---|
+| Category | Random events |
+| Total lines | 8,874 |
+| Functions | 242 (46 unique, 196 shared) |
+| Unique lines | 2,120 (23.9% of file) |
+
+## Developer state labels
+
+Debug strings left in the shipped script. They name its own internal states:
+
+`At_Point_Of_Interest TRUE` · `IS_ANY_CONVERSATION_ONGOING_OR_QUEUED` · `AMBIENT LINE` · `NOT PLAY_SINGLE_LINE_FROM_CONVERSATION`
+
+## Assets
+
+**Animation dictionaries** (1) - `RANDOM@BUS_TOUR_GUIDE@IDLE_A`
+
+**Animations** (3) - `IDLE_A`, `IDLE_B`, `IDLE_C`
+
+**Models and props** (58) - `tourbus`, `A_F_M_DOWNTOWN_01_BLACK_FULL_01`, `A_F_M_EASTSA_01_LATINO_FULL_01`, `A_F_M_FATWHITE_01_WHITE_FULL_01`, `A_F_M_KTOWN_02_KOREAN_FULL_01`, `A_F_M_SOUCENT_02_BLACK_FULL_01`, `A_F_M_TOURIST_01_WHITE_MINI_01`, `A_F_O_KTOWN_01_KOREAN_FULL_01`, `A_F_O_SOUCENT_01_BLACK_FULL_01`, `A_F_Y_EASTSA_02_WHITE_FULL_01`, `A_F_Y_HIKER_01_WHITE_FULL_01`, `A_F_Y_HIKER_01_WHITE_MINI_01`, `A_F_Y_HIPSTER_03_WHITE_FULL_01`, `A_F_Y_TOURIST_01_BLACK_FULL_01`, `A_F_Y_TOURIST_01_LATINO_FULL_01`, `A_F_Y_TOURIST_01_WHITE_FULL_01`, `A_F_Y_TOURIST_02_WHITE_MINI_01`, `A_M_M_AFRIAMER_01_BLACK_FULL_01`, `A_M_M_EASTSA_01_LATINO_FULL_01`, `A_M_M_EASTSA_02_LATINO_FULL_01`, `A_M_M_FATLATIN_01_LATINO_FULL_01`, `A_M_M_GENFAT_01_LATINO_FULL_01`, `A_M_M_POLYNESIAN_01_POLYNESIAN_FULL_01`, `A_M_M_SALTON_01_WHITE_FULL_01`, `A_M_M_SALTON_02_WHITE_FULL_01`, `A_M_M_STLAT_02_LATINO_FULL_01`, `A_M_M_TOURIST_01_WHITE_MINI_01`, `A_M_O_GENSTREET_01_WHITE_FULL_01`, `A_M_Y_BEACH_01_CHINESE_FULL_01`, `A_M_Y_BEACH_01_CHINESE_MINI_01`, `A_M_Y_BEACH_01_WHITE_FULL_01`, `A_M_Y_BEACH_02_LATINO_FULL_01`, `A_M_Y_BEACH_03_WHITE_FULL_01`, `A_M_Y_BEACHVESP_01_CHINESE_FULL_01`, `A_M_Y_BEACHVESP_01_CHINESE_MINI_01`, `A_M_Y_BEACHVESP_01_WHITE_FULL_01`, `A_M_Y_BEACHVESP_02_WHITE_FULL_01`, `A_M_Y_BEACHVESP_02_WHITE_MINI_01`, `A_M_Y_BEVHILLS_01_WHITE_FULL_01`, `A_M_Y_BUSINESS_01_BLACK_FULL_01`, `A_M_Y_BUSINESS_01_CHINESE_FULL_01`, `A_M_Y_BUSINESS_02_BLACK_FULL_01`, `A_M_Y_BUSINESS_02_WHITE_FULL_01`, `A_M_Y_EASTSA_01_LATINO_FULL_01`, `A_M_Y_GENSTREET_01_CHINESE_FULL_01`, `A_M_Y_GENSTREET_01_WHITE_FULL_01`, `A_M_Y_GENSTREET_02_BLACK_FULL_01`, `A_M_Y_GENSTREET_02_LATINO_FULL_01`, `A_M_Y_POLYNESIAN_01_POLYNESIAN_FULL_01`, `A_M_Y_STLAT_01_LATINO_FULL_01`, `a_m_m_tramp_01`, `a_f_m_tramp_01`, `a_m_o_tramp_01`, `s_m_y_cop_01`, `s_m_y_fireman_01`, `a_f_y_hiker_01`, `a_f_m_bevhills_02`, `s_m_m_gentransport`
+
+**Sounds** (4) - `RE_BUS_TOUR_SCENE`, `RE_BUS_TOUR_FADE_OUT_WORLD`, `1st_Person_Transition`, `PLAYER_SWITCH_CUSTOM_SOUNDSET`
+
+**Speech contexts** (2) - `SPEECH_PARAMS_FORCE`, `A_F_M_BEVHILLS_02_WHITE_FULL_02`
+
+**Text labels** (8) - `BUSTOAU`, `NULL`, `RAIN`, `THUNDER`, `OVERCAST`, `BUSTOUR`, `OFF`, `TOURGUIDE`
+
+**Relationship groups** (1) - `re_bus_tours1`
+
+**Vehicle mods** (1) - `tourbus`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`PLAYER_PED_ID` (54), `IS_PED_INJURED` (38), `GET_GAME_TIMER` (27), `IS_VEHICLE_DRIVEABLE` (21), `PLAYER_ID` (17), `TO_FLOAT` (12), `DESTROY_CAM` (10), `DOES_CAM_EXIST` (9), `RENDER_SCRIPT_CAMS` (9), `SET_PED_KEEP_TASK` (9), `TASK_VEHICLE_DRIVE_TO_COORD` (9), `SUPRESS_RANDOM_EVENT_THIS_FRAME` (9), `DOES_ENTITY_EXIST` (7), `SET_BLOCKING_OF_NON_TEMPORARY_EVENTS` (7), `SET_VEHICLE_DOORS_LOCKED` (7), `SET_ENTITY_COORDS` (7), `SET_ENTITY_HEADING` (7), `SET_ENTITY_VISIBLE` (7), `GET_RANDOM_INT_IN_RANGE` (7), `SET_PED_INTO_VEHICLE` (7), `SET_PLAYER_CONTROL` (6), `CLEAR_PED_TASKS` (6), `GET_ENTITY_MODEL` (6), `SET_PED_COMPONENT_VARIATION` (6), `IS_GAMEPLAY_HINT_ACTIVE` (5), `SET_CAM_ACTIVE` (5), `SET_MINIGAME_IN_PROGRESS` (5), `DISPLAY_RADAR` (5), `WAIT` (5), `DRAW_DEBUG_TEXT_2D` (5)
+
+## Tuning constants
+
+Float literals in unique code: distances, timings, blend values.
+
+`0.02f` x5 · `0.5f` x3 · `101.4382f` x2 · `250.0447f` x2 · `107.2579f` x2 · `268.4057f` x2 · `0.3f` x2 · `2.5f` x1 · `1.5f` x1 · `0.1f` x1 · `0.01f` x1 · `120.8878f` x1 · `239.3244f` x1 · `106.5131f` x1 · `-100.461f` x1 · `-206.1412f` x1 · `44.4215f` x1 · `93.8459f` x1 · `251.8829f` x1 · `110.4535f` x1 · `23.0883f` x1 · `0.101f` x1 · `-61.7699f` x1 · `97.0995f` x1
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`tourbus`, `DEFAULT_SCRIPTED_CAMERA`, `BUSTO_RAMB`, `BUSTO_THANK`, `TOUR_ABOUT_TO_START`, `Enter_bus`, `curiCurrentRambler `, `BUSTO_THANK_7`, `Tour_help`, `BUSTO_RAMB_1`, `BUSTO_RAMB_2`, `BUSTO_RAMB_3`, `BUSTO_RAMB_4`, `BUSTO_RAMB_5`, `BUSTO_RAMB_6`, `BUSTO_RAMB_7`, `BUSTO_RAMB_8`, `BUSTO_RAMB_9`, `BUSTO_RAMB_10`, `BUSTO_RAMB_11`, `BUSTO_RAMB_12`, `BUSTO_RAMB_13`, `BUSTO_RAMB_14`, `TOUR_CHAT`, `TOUR_LANDMARK`, `RE_BUS_TOUR_BUS_VEHICLE`, `BusTours`, `BUSTO_GO`, `CamPushInNeutral`
+
+---
+
+Source: `decompiled_scripts/re_bus_tours.c`

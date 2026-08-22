@@ -1,0 +1,73 @@
+# MP ambient
+
+67 scripts, ordered by how much code is unique to them.
+
+| Script | Unique lines | Unique funcs | Total lines |
+|---|---:|---:|---:|
+| [am_mp_defunct_base.c](am_mp_defunct_base.md) | 50,923 | 806 | 539,916 |
+| [am_mp_submarine.c](am_mp_submarine.md) | 44,151 | 677 | 591,078 |
+| [am_mp_bail_office.c](am_mp_bail_office.md) | 35,284 | 478 | 570,037 |
+| [am_mp_smpl_interior_int.c](am_mp_smpl_interior_int.md) | 33,622 | 506 | 419,819 |
+| [am_mp_armory_truck.c](am_mp_armory_truck.md) | 31,044 | 403 | 426,837 |
+| [am_mp_business_hub.c](am_mp_business_hub.md) | 30,139 | 312 | 446,622 |
+| [am_mp_smpl_interior_ext.c](am_mp_smpl_interior_ext.md) | 27,963 | 511 | 402,834 |
+| [am_contact_requests.c](am_contact_requests.md) | 27,586 | 627 | 103,375 |
+| [am_mp_car_meet_sandbox.c](am_mp_car_meet_sandbox.md) | 26,528 | 218 | 541,577 |
+| [am_mp_peds.c](am_mp_peds.md) | 23,504 | 416 | 140,503 |
+| [am_mp_arc_cab_manager.c](am_mp_arc_cab_manager.md) | 23,434 | 331 | 392,333 |
+| [am_mp_yacht.c](am_mp_yacht.md) | 22,316 | 286 | 408,787 |
+| [am_mp_acid_lab.c](am_mp_acid_lab.md) | 19,827 | 192 | 501,822 |
+| [am_mp_simeon_showroom.c](am_mp_simeon_showroom.md) | 18,547 | 166 | 481,080 |
+| [am_mp_sb_car_wash.c](am_mp_sb_car_wash.md) | 17,337 | 175 | 495,407 |
+| [am_mp_shooting_range.c](am_mp_shooting_range.md) | 16,986 | 194 | 407,868 |
+| [am_mp_smoking_activity.c](am_mp_smoking_activity.md) | 12,278 | 57 | 362,135 |
+| [am_kill_list.c](am_kill_list.md) | 12,199 | 185 | 34,345 |
+| [am_mp_solomon_office.c](am_mp_solomon_office.md) | 12,125 | 76 | 363,555 |
+| [am_mp_island.c](am_mp_island.md) | 10,835 | 259 | 299,410 |
+| [am_penned_in.c](am_penned_in.md) | 9,059 | 153 | 102,132 |
+| [am_mp_drone.c](am_mp_drone.md) | 8,385 | 215 | 15,847 |
+| [am_king_of_the_castle.c](am_king_of_the_castle.md) | 7,634 | 127 | 25,852 |
+| [am_hunt_the_beast.c](am_hunt_the_beast.md) | 7,396 | 118 | 184,286 |
+| [am_launcher.c](am_launcher.md) | 7,290 | 122 | 26,157 |
+| [am_dead_drop.c](am_dead_drop.md) | 6,566 | 73 | 142,800 |
+| [am_hold_up.c](am_hold_up.md) | 6,486 | 86 | 22,531 |
+| [am_hot_target.c](am_hot_target.md) | 6,385 | 123 | 146,290 |
+| [am_cp_collection.c](am_cp_collection.md) | 5,835 | 86 | 25,287 |
+| [am_imp_exp.c](am_imp_exp.md) | 5,188 | 107 | 22,005 |
+| [am_challenges.c](am_challenges.md) | 4,447 | 112 | 27,973 |
+| [am_npc_invites.c](am_npc_invites.md) | 3,729 | 90 | 13,640 |
+| [am_gang_call.c](am_gang_call.md) | 3,713 | 96 | 19,901 |
+| [am_crate_drop.c](am_crate_drop.md) | 3,458 | 62 | 50,949 |
+| [am_armybase.c](am_armybase.md) | 2,553 | 61 | 6,681 |
+| [am_pass_the_parcel.c](am_pass_the_parcel.md) | 2,203 | 62 | 142,150 |
+| [am_mission_launch.c](am_mission_launch.md) | 1,945 | 39 | 13,004 |
+| [am_mp_orbital_cannon.c](am_mp_orbital_cannon.md) | 1,853 | 44 | 7,615 |
+| [am_luxury_showroom.c](am_luxury_showroom.md) | 1,852 | 62 | 120,575 |
+| [am_ferriswheel.c](am_ferriswheel.md) | 1,794 | 61 | 9,779 |
+| [am_rontrevor_cut.c](am_rontrevor_cut.md) | 1,438 | 25 | 126,927 |
+| [am_criminal_damage.c](am_criminal_damage.md) | 1,375 | 40 | 136,478 |
+| [am_destroy_veh.c](am_destroy_veh.md) | 1,288 | 26 | 8,245 |
+| [am_lester_cut.c](am_lester_cut.md) | 1,283 | 23 | 9,182 |
+| [am_ammo_drop.c](am_ammo_drop.md) | 1,161 | 32 | 5,930 |
+| [am_car_mod_tut.c](am_car_mod_tut.md) | 1,068 | 29 | 10,444 |
+| [am_airstrike.c](am_airstrike.md) | 971 | 23 | 4,726 |
+| [am_mp_hotwire.c](am_mp_hotwire.md) | 934 | 19 | 5,740 |
+| [am_bru_box.c](am_bru_box.md) | 884 | 26 | 10,417 |
+| [am_island_backup_heli.c](am_island_backup_heli.md) | 856 | 21 | 2,533 |
+| [am_lowrider_int.c](am_lowrider_int.md) | 854 | 23 | 81,024 |
+| [am_joyrider.c](am_joyrider.md) | 772 | 16 | 3,491 |
+| [am_backup_heli.c](am_backup_heli.md) | 761 | 18 | 4,659 |
+| [am_doors.c](am_doors.md) | 650 | 17 | 5,800 |
+| [am_simosa.c](am_simosa.md) | 634 | 17 | 101,272 |
+| [am_distract_cops.c](am_distract_cops.md) | 628 | 25 | 7,894 |
+| [am_prostitute.c](am_prostitute.md) | 496 | 14 | 2,903 |
+| [am_ga_pickups.c](am_ga_pickups.md) | 353 | 10 | 2,659 |
+| [am_hs4_nimb_lsa_isd_leave.c](am_hs4_nimb_lsa_isd_leave.md) | 109 | 6 | 49,723 |
+| [am_hs4_nimb_lsa_isd_arrive.c](am_hs4_nimb_lsa_isd_arrive.md) | 90 | 4 | 86,160 |
+| [am_mp_vinewood_premium_modshop.c](am_mp_vinewood_premium_modshop.md) | 29 | 1 | 178 |
+| [am_hs4_lsa_land_nimb_arrive.c](am_hs4_lsa_land_nimb_arrive.md) | 7 | 1 | 49,563 |
+| [am_hs4_lsa_take_vel.c](am_hs4_lsa_take_vel.md) | 7 | 1 | 49,563 |
+| [am_hs4_isd_take_vel.c](am_hs4_isd_take_vel.md) | 6 | 1 | 49,562 |
+| [am_hs4_lsa_land_vel.c](am_hs4_lsa_land_vel.md) | 6 | 1 | 49,562 |
+| [am_hs4_nimb_isd_lsa_leave.c](am_hs4_nimb_isd_lsa_leave.md) | 6 | 1 | 49,555 |
+| [am_hs4_vel_lsa_isd.c](am_hs4_vel_lsa_isd.md) | 6 | 1 | 49,562 |

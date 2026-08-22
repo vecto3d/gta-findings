@@ -1,0 +1,44 @@
+# heist_island_planning.c
+
+Heists script. 2 anim dicts; 25 scaleforms.
+
+| | |
+|---|---|
+| Category | Heists |
+| Total lines | 34,199 |
+| Functions | 1,036 (327 unique, 709 shared) |
+| Unique lines | 10,882 (31.8% of file) |
+
+## Assets
+
+**Animation dictionaries** (2) - `anim@scripted@submarine@ig18_sub_screen@heeled@`, `anim@scripted@submarine@ig18_sub_screen@male@`
+
+**Scaleform movies** (25) - `HIDE_OVERLAY`, `REQUEST_CURRENT_SELECTION`, `REQUEST_CURRENT_ROLLOVER`, `SET_FINALE_ITEM_SELECTED`, `ADD_FINALE_ITEM`, `REMOVE_FINALE_ITEM`, `SET_SETUP_ITEM_NUM_COMPLETE`, `SET_LAUNCH_BUTTON`, `SHOW_OVERLAY`, `SET_CURRENT_SELECTION`, `SET_MAP_VIEW`, `HIDE_TIP_TEXT`, `SHOW_TIP_TEXT`, `SET_CREW_CUTS_VISIBLE`, `SET_CREW_MEMBER`, `SHOW_SCREEN`, `SET_INITIAL_TAB_VIEW`, `SET_TABS`, `SET_IS_HARD_MODE`, `SET_FINALE_LIST_TITLE`, `SET_FINALE_MENU_IDS`, `SET_FINALE_COST`, `SET_PAYOUTS`, `ADD_WORLD_MAP_ICON`, `ADD_SETUP_ITEM`
+
+**Texture dicts** (1) - `HS4F_INT`
+
+**Text labels** (29) - `AIRSTRIP`, `SUBMARINE`, `BOMBER`, `HELICOPTER`, `PARACHUTING`, `PLANE`, `PILOT`, `SHOTGUN`, `SNIPER`, `SMG`, `SUPPRESSORS`, `NULL`, `SELECT`, `BACK`, `ERROR`, `PAY`, `USE`, `BOOTUP`, `BACKGROUND`, `HS4PAAU`, `CASH`, `WEED`, `COCAINE`, `GOLD`, `PAINTINGS`, `FINGERPRINT`, `WEAPONS`, `ARMOR`, `BACKUP`
+
+**Timecycle modifiers** (1) - `h4_sub_commandroom_BloomRedux`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`NETWORK_IS_ACTIVITY_SESSION` (80), `PLAYER_ID` (79), `NETWORK_PLAYER_ID_TO_INT` (44), `SET_BIT` (42), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT` (38), `GET_RANDOM_INT_IN_RANGE` (24), `BEGIN_SCALEFORM_MOVIE_METHOD` (22), `END_SCALEFORM_MOVIE_METHOD` (20), `CLEAR_BIT` (17), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL` (13), `CEIL` (10), `ABSI` (8), `TO_FLOAT` (5), `CLEAR_HELP` (4), `TASK_PLAY_ANIM` (3), `IS_ENTITY_PLAYING_ANIM` (3), `IS_STRING_NULL_OR_EMPTY` (3), `NETWORK_SPEND_ISLAND_HEIST` (3), `GET_ROOM_KEY_FROM_ENTITY` (3), `INT_TO_PLAYERINDEX` (3), `SHOW_HUD_COMPONENT_THIS_FRAME` (3), `GET_IS_WIDESCREEN` (2), `GET_CURRENT_LANGUAGE` (2), `GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING` (2), `GET_RANDOM_FLOAT_IN_RANGE` (2), `CALL_SCALEFORM_MOVIE_METHOD` (2), `END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE` (2), `SET_TEXT_RENDER_ID` (2), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING` (2), `NETWORK_CAN_SPEND_MONEY` (2)
+
+## Tuning constants
+
+Float literals in unique code: distances, timings, blend values.
+
+`0.5f` x3 · `1.5f` x2 · `0.05f` x1 · `1.333333f` x1 · `0.1f` x1 · `1561.149f` x1 · `386.0429f` x1 · `-49.68533f` x1 · `0.65f` x1 · `0.75f` x1
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`H4P_PREP_MAND`, `H4P_PREP_OPT`, `H4P_FIN2_INFI_D`, `H4P_FIN1_APRV_D`, `CH_INSTR_SEL`, `MAIN_DOCK`, `NORTH_DOCK`, `DRAINAGE_TUNNEL`, `H4P_PRP3_UKNW_D`, `H4P_FIN4_ESCA_D`, `HIP_TOOMANY2`, `HIP_TOOMANY1`, `CH_INSTR_BACK`, `HEIST_IB_NAV`, `CH_INSTR_LM`, `CH_INSTR_PREV`, `CH_INSTR_QUIT`, `HP_MAP`, `HEIST_NOTE_6`, `HEIST_NOTE_5`, `hs4f_int`, `WEST_BEACH`, `NORTH_DROP_ZONE`, `SOUTH_DROP_ZONE`, `MAIN_GATE`, `PATROL_BOAT`, `SMUGGLER_BOAT`, `BULLPUP_RIFLE`, `ASSAULT_RIFLE`, `H4P_FIN3_CENT_D`
+
+---
+
+Source: `decompiled_scripts/heist_island_planning.c`

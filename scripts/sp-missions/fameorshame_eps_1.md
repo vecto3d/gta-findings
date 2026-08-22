@@ -1,0 +1,36 @@
+# fameorshame_eps_1.c
+
+SP missions script.
+
+| | |
+|---|---|
+| Category | SP missions |
+| Total lines | 1,475 |
+| Functions | 55 (1 unique, 54 shared) |
+| Unique lines | 49 (3.3% of file) |
+
+## Assets
+
+**Text labels** (1) - `NUMBER`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`SET_TEXT_SCALE` (1), `WAIT` (1), `SET_MISSION_FLAG` (1), `HAS_FORCE_CLEANUP_OCCURRED` (1), `DO_SCREEN_FADE_OUT` (1), `SET_DEBUG_LINES_AND_SPHERES_DRAWING_ACTIVE` (1), `REQUEST_CUTSCENE` (1), `SET_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME` (1), `SET_PED_DENSITY_MULTIPLIER_THIS_FRAME` (1), `PLAYER_PED_ID` (1)
+
+## Tuning constants
+
+Float literals in unique code: distances, timings, blend values.
+
+`0.5f` x2 · `0.1f` x2
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`fos_ep_1_p1`
+
+---
+
+Source: `decompiled_scripts/fameorshame_eps_1.c`

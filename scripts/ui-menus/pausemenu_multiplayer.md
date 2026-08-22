@@ -1,0 +1,42 @@
+# pausemenu_multiplayer.c
+
+UI and menus script. 1 models; 19 scaleforms.
+
+| | |
+|---|---|
+| Category | UI and menus |
+| Total lines | 150,533 |
+| Functions | 2,152 (382 unique, 1,770 shared) |
+| Unique lines | 34,239 (22.7% of file) |
+
+## Assets
+
+**Models and props** (1) - `SET_DATA_SLOT`
+
+**Sounds** (6) - `HUD_FRONTEND_DEFAULT_SOUNDSET`, `SELECT`, `NAV_UP_DOWN`, `NAV_LEFT_RIGHT`, `CANCEL`, `BACK`
+
+**Scaleform movies** (19) - `SET_DATA_SLOT`, `SET_DATA_SLOT_EMPTY`, `UPDATE_SLOT`, `FOCUS_CONTENT`, `PM_MULTI`, `SHOW_WARNING_MESSAGE`, `SET_COLUMN_TITLE`, `SET_DESCRIPTION`, `STRTNM1`, `SHOW_COLUMN`, `MENU_SHIFT_DEPTH`, `PM_PLAYERS_V`, `NUMBER`, `ALLOW_CLICK_FROM_COLUMN`, `STRING`, `SET_COLUMN_SCROLL`, `SET_COLUMN_FOCUS`, `SET_COLUMN_HIGHLIGHT`, `SET_COLUMN_CAN_JUMP`
+
+**Text labels** (19) - `NUMBER`, `PMOWRACESWAR`, `STRTNM1`, `ERROR_CHECKPROFANITY`, `WSBS`, `STRING`, `NULL`, `PMOWRACESCOM`, `PMOWRACESBOOK`, `PMOWRACESNOM`, `CAIPL`, `CAIPLB`, `CAIN`, `CAIL`, `CAID`, `CAIM`, `CAES`, `CAET`, `FMMC_DOWNLOAD`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`PAUSE_MENU_DEACTIVATE_CONTEXT` (318), `DATADICT_SET_INT` (262), `CLEAR_BIT` (257), `PLAYER_ID` (256), `SET_BIT` (224), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT` (179), `PAUSE_MENU_ACTIVATE_CONTEXT` (166), `ARE_STRINGS_EQUAL` (91), `PAUSE_MENU_REDRAW_INSTRUCTIONAL_BUTTONS` (88), `DATADICT_GET_ARRAY` (76), `IS_CONTROL_JUST_RELEASED` (68), `DATAARRAY_GET_INT` (68), `DATADICT_SET_FLOAT` (61), `DATAARRAY_GET_TYPE` (61), `PLAY_SOUND_FRONTEND` (50), `IS_STRING_NULL_OR_EMPTY` (44), `SET_WARNING_MESSAGE_WITH_HEADER` (42), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL` (41), `GET_HASH_KEY` (41), `NETWORK_IS_GAME_IN_PROGRESS` (40), `BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND` (36), `END_SCALEFORM_MOVIE_METHOD` (36), `UGC_CANCEL_QUERY` (35), `TAKE_CONTROL_OF_FRONTEND` (31), `DATADICT_GET_INT` (31), `NETWORK_SESSION_IS_AWAITING_INVITE_RESPONSE` (27), `PAUSE_MENU_IS_CONTEXT_ACTIVE` (27), `PLAYER_PED_ID` (26), `RELEASE_CONTROL_OF_FRONTEND` (23), `BEGIN_TEXT_COMMAND_SCALEFORM_STRING` (21)
+
+## Tuning constants
+
+Float literals in unique code: distances, timings, blend values.
+
+`0.3f` x2 · `-0.3f` x2 · `-1381.524f` x1 · `-477.9127f` x1 · `71.0821f` x1 · `-1572.022f` x1 · `-573.55f` x1 · `107.5629f` x1 · `-139.216f` x1 · `-632.184f` x1 · `167.8604f` x1 · `-72.7126f` x1 · `-816.2345f` x1 · `242.4259f` x1 · `-1093.14f` x1 · `-807.15f` x1 · `18.28f` x1
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`PageLeft`, `PageRight`, `PM_DOPROT`, `PCARD_SYNC_ERROR_TITLE`, `lft`, `PM_SOC_PLY`, `PM_DELETE`, `PM_SOC_SGN`, `PM_QUIT_WARN5`, `CONT_FRIEN`, `PM_ARENA`, `CONT_NONE`, `PM_OFF`, `PM_TPLAYL`, `PM_ON`, `PM_QUIT_K1`, `subtype`, `PM_TYPE`, `PM_AREA`, `PM_CASH`, `PM_RC_STUNT`, `RC_TARGASSAULT`, `PM_DOPROB`, `City`, `Country_side`
+
+---
+
+Source: `decompiled_scripts/pausemenu_multiplayer.c`

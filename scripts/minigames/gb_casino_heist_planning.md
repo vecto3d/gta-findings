@@ -1,0 +1,48 @@
+# gb_casino_heist_planning.c
+
+Minigames script. 3 models; 37 scaleforms.
+
+| | |
+|---|---|
+| Category | Minigames |
+| Total lines | 43,973 |
+| Functions | 1,295 (560 unique, 735 shared) |
+| Unique lines | 18,084 (41.1% of file) |
+
+## Assets
+
+**Models and props** (3) - `ch_prop_whiteboard`, `ch_prop_whiteboard_02`, `ch_prop_whiteboard_03`
+
+**Audio banks** (1) - `DLC_MPHEIST/HEIST_PLANNING_BOARD`
+
+**Sounds** (12) - `DLC_HEIST_PLANNING_BOARD_SOUNDS`, `Highlight_Move`, `Paper_Shuffle`, `Highlight_Accept`, `HUD_FRONTEND_DEFAULT_SOUNDSET`, `Highlight_Error`, `Back`, `SELECT`, `INFO`, `Paper_Stick`, `BACK`, `Error`
+
+**Scaleform movies** (37) - `INSTRUCTIONAL_BUTTONS`, `SET_BUTTON_IMAGE`, `SET_HEADINGS`, `SET_CREW_MEMBER`, `SET_CURRENT_SELECTION`, `SET_PADLOCK`, `CASINO_HEIST_BOARD_FINALE`, `SET_SECURITY_PASS_VISIBLE`, `SET_MISSION_COMPLETION`, `SET_PURCHASED`, `SET_CREW_MEMBER_HIRED`, `SET_MISSION`, `SET_POSTER_VISIBLE`, `ADD_APPROACH`, `CASINO_HEIST_BOARD_PREP`, `GET_CURRENT_SELECTION`, `SET_BLUEPRINT_VISIBLE`, `SET_EXTREME`, `SET_POI_IMAGES`, `SET_TARGET_TYPE`, `CASINO_HEIST_BOARD_SETUP`, `SET_INSIDE_MAN`, `SET_GRAPHICS_VISIBLE`, `SET_CREW_CUT`, `SET_BUTTON_GREYED_OUT`, `SET_BUTTON_VISIBLE`, `SET_BUTTON_ENABLED`, `SET_MAP_MARKERS`, `SET_SELECTION_ARROWS_VISIBLE`, `SET_NOT_SELECTED_VISIBLE`, `SET_TICK`, `ADD_OPTIONAL_LIST_ITEM`, `CLEAR_OPTIONAL_LIST`, `ADD_TODO_LIST_ITEM`, `CLEAR_TODO_LIST`, `SET_LAUNCH_BUTTON_LABEL`, `SET_CREW_MEMBER_STATE`
+
+**Texture dicts** (1) - `MPHeist3Planning`
+
+**Text labels** (4) - `LESTER`, `NULL`, `HS3PRAU`, `HS3LEAU`
+
+**Hashed names** (1) - `appArcadeBusinessHub`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`PLAYER_ID` (119), `SET_BIT` (111), `CLEAR_BIT` (84), `PLAY_SOUND_FRONTEND` (81), `NETWORK_PLAYER_ID_TO_INT` (64), `NETWORK_IS_ACTIVITY_SESSION` (45), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT` (43), `BEGIN_SCALEFORM_MOVIE_METHOD` (34), `END_SCALEFORM_MOVIE_METHOD` (33), `IS_STRING_NULL_OR_EMPTY` (23), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL` (18), `PLAYER_PED_ID` (14), `INT_TO_PLAYERINDEX` (12), `FREEZE_ENTITY_POSITION` (10), `GET_PLAYER_NAME` (10), `IS_CONTROL_JUST_PRESSED` (9), `IS_CONTROL_JUST_RELEASED` (8), `SET_SCRIPT_GFX_DRAW_BEHIND_PAUSEMENU` (8), `SET_TEXT_RENDER_ID` (8), `IS_USING_KEYBOARD_AND_MOUSE` (8), `ABSI` (8), `ARE_STRINGS_EQUAL` (7), `CLEAR_HELP` (6), `REQUEST_SCALEFORM_MOVIE` (6), `HAS_SCALEFORM_MOVIE_LOADED` (5), `ROUND` (5), `FLOOR` (4), `GET_CONTROL_NORMAL` (4), `GET_DEFAULT_SCRIPT_RENDERTARGET_RENDER_ID` (4), `NETWORK_IS_PLAYER_ACTIVE` (4)
+
+## Tuning constants
+
+Float literals in unique code: distances, timings, blend values.
+
+`0.5f` x7 · `0.25f` x3 · `2714.045f` x1 · `-365.8374f` x1 · `-55.7809f` x1 · `2714.005f` x1 · `-373.1754f` x1 · `-53.7809f` x1 · `5.25f` x1 · `0.501f` x1 · `0.1f` x1
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`CH_INSTR_INFO`, `CH_LIST_BLANK`, `CH_INSTR_ZOOM`, `HEIST_IB_LOOK`, `CH_DP_OPT`, `CH_DP_MAND`, `CH_SKILL_EXPR`, `CH_INSTR_SEL`, `CH_SKILL_GOOD`, `service_spend_casino_heist_skip_mission`, `CH_INSTR_QUIT`, `CH_INSTR_LM`, `CH_HELP_LBDR0`, `CH_HELP_LBDR1`, `CH_HELP_LBDR2`, `CH_HELP_LBDR3`, `CH_HELP_LBDR4`, `CH_HELP_LBDR5`, `CH_HELP_LBDR6`, `GENERAL_MLF_G1`, `GENERAL_MLF_G2`, `GENERAL_MLF_G3`, `GENERAL_MLF_G4`, `GENERAL_MLF_G5`, `GENERAL_MLF_G6`, `GENERAL_MLF_G8`, `GENERAL_MLF_G9`, `CH_TODO_PREP_0`, `CH_TODO_PREP_1`, `CH_TODO_PREP_2`
+
+---
+
+Source: `decompiled_scripts/gb_casino_heist_planning.c`

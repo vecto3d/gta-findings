@@ -1,0 +1,40 @@
+# si_dancing_activity.c
+
+Properties and venues script. 10 anim dicts.
+
+| | |
+|---|---|
+| Category | Properties and venues |
+| Total lines | 14,075 |
+| Functions | 447 (46 unique, 401 shared) |
+| Unique lines | 1,361 (9.7% of file) |
+
+## Assets
+
+**Animation dictionaries** (10) - `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_A@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_B@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_D@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_E@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_F@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_H@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_J@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_K@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_L@`, `ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_PAIRED@DANCE_M@`
+
+**Text labels** (1) - `NULL`
+
+**Scripts launched** (2) - `spawn_activities`, `context_controller`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`PLAYER_PED_ID` (16), `GET_PLAYER_PED` (14), `ARE_STRINGS_EQUAL` (11), `GET_ENTITY_COORDS` (8), `GET_CLOUD_TIME_AS_INT` (6), `SET_BIT` (5), `GET_FRAME_COUNT` (5), `PLAYER_ID` (5), `IS_STRING_NULL_OR_EMPTY` (5), `IS_CONTROL_JUST_PRESSED` (4), `GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH` (3), `TO_FLOAT` (3), `NETWORK_IS_PARTICIPANT_ACTIVE` (3), `GET_ENTITY_FORWARD_VECTOR` (3), `IS_USING_KEYBOARD_AND_MOUSE` (3), `GET_CONTROL_NORMAL` (3), `NETWORK_IS_GAME_IN_PROGRESS` (2), `GET_GAME_TIMER` (2), `CLEAR_BIT` (2), `INT_TO_PARTICIPANTINDEX` (2), `NETWORK_GET_PLAYER_INDEX` (2), `IS_ENTITY_IN_AIR` (2), `GET_ENTITY_HEADING` (2), `IS_CONTROL_PRESSED` (2), `DOES_ENTITY_EXIST` (2), `IS_ENTITY_DEAD` (2), `IS_TASK_MOVE_NETWORK_ACTIVE` (2), `IS_PED_RUNNING` (2), `IS_PED_RAGDOLL` (2), `IS_PED_IN_ANY_VEHICLE` (2)
+
+## Tuning constants
+
+Float literals in unique code: distances, timings, blend values.
+
+`-10.857f` x2 · `0.3f` x1 · `0.5f` x1 · `32.123f` x1 · `-4.093f` x1 · `31.099f` x1 · `-2.67f` x1 · `-8.9f` x1 · `30.567f` x1 · `-1.775f` x1 · `29.721f` x1 · `-0.618f` x1 · `-8.925f` x1
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`DUAL_DANCE_BLOCK`, `CLUB_SAFE_HT`, `DM_AREA_BLOCK`, `MAN_FIRST_CLB1`, `MAN_FIRST_CLB2`, `MAN_FIRST_CLB0`, `PED_A_DANCE_INTRO`, `PED_A_STANDING_INTRO`, `PED_A_DANCE_IDLE`, `PED_A_DANCE_EXIT`, `PED_A_STANDING_EXIT`, `PED_B_DANCE_INTRO`, `PED_B_STANDING_INTRO`, `PED_B_DANCE_IDLE`, `PED_B_DANCE_EXIT`, `PED_B_STANDING_EXIT`, `_facial`, `NIGHTCLUB_FOLLOW_PED_CAMERA`, `DANCE_0`, `COMBO_STOP`, `DANCE_MIN`, `DANCE_ALT`, `DANCE_ALT_KB`, `DANCE_MIN_ALT`, `DM_DD_JOIN`, `DM_DD_JOIN_ALT`, `DM_DD_JOIN_K`, `DM_DD_L_CTRL`, `DM_DD_CTRL`
+
+---
+
+Source: `decompiled_scripts/si_dancing_activity.c`

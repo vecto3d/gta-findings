@@ -1,0 +1,30 @@
+# gb_terminate.c
+
+MP gang ops script.
+
+| | |
+|---|---|
+| Category | MP gang ops |
+| Total lines | 68,677 |
+| Functions | 853 (27 unique, 826 shared) |
+| Unique lines | 871 (1.3% of file) |
+
+## Assets
+
+**Text labels** (1) - `NULL`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`PLAYER_ID` (24), `SET_BIT` (21), `PARTICIPANT_ID_TO_INT` (14), `NETWORK_IS_PLAYER_ACTIVE` (3), `GET_PLAYER_PED` (3), `INT_TO_PLAYERINDEX` (2), `DOES_ENTITY_EXIST` (2), `IS_ENTITY_A_PED` (2), `GET_PED_INDEX_FROM_ENTITY_INDEX` (2), `SET_PLAYER_CAN_DAMAGE_PLAYER` (2), `GET_PLAYER_NAME` (2), `NETWORK_IS_GAME_IN_PROGRESS` (1), `NETWORK_IS_HOST_OF_THIS_SCRIPT` (1), `TERMINATE_THIS_THREAD` (1), `NETWORK_GET_MAX_NUM_PARTICIPANTS` (1), `NETWORK_GET_NUM_PARTICIPANTS` (1), `GET_EVENT_DATA` (1), `PLAYER_PED_ID` (1), `_SEND_TU_SCRIPT_EVENT_NEW` (1), `RESERVE_NETWORK_MISSION_OBJECTS` (1), `NETWORK_REGISTER_HOST_BROADCAST_VARIABLES` (1), `NETWORK_REGISTER_PLAYER_BROADCAST_VARIABLES` (1), `SET_THIS_SCRIPT_CAN_BE_PAUSED` (1), `IS_ENTITY_DEAD` (1), `GET_ENTITY_COORDS` (1)
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`GBTER_B_BIG`, `GB_WORK_OVER`, `GB_WINNER`, `GBTER_BIG`, `GBTER_BIG_GS`, `GBTER_AB_SS`, `BK_RUN_OVER`, `GBTER_B_SSH`, `GBTER_B_SSH_A`, `GBTER_BIG_COMS`, `GBTER_B_SSO`, `GBTER_B_SSO_A`, `GBTER_KILL`, `GBTER_B_KILL`, `GBTER_AB_KILL`, `GBTER_B_SSW`, `GBTER_B_SSW_A`, `GBTER_B_BFLEE`, `GBTER_BIG_FLEE`, `GBTER_BIG_WINS`, `GB_WORK_END`, `BK_TIME`, `GBTER_START`, `GBTER_BSTART`, `GBTER_AB_START`, `GBTER_B_SS`, `GBTER_BOSS`, `GBTER_BBOSS`, `GBTER_AB_BOSS`, `GBTER_B_BSS`
+
+---
+
+Source: `decompiled_scripts/gb_terminate.c`

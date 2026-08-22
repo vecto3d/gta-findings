@@ -1,0 +1,42 @@
+# appbailoffice.c
+
+Phone apps script. 12 scaleforms.
+
+| | |
+|---|---|
+| Category | Phone apps |
+| Total lines | 18,522 |
+| Functions | 458 (55 unique, 403 shared) |
+| Unique lines | 1,869 (10.1% of file) |
+
+## Assets
+
+**Sounds** (2) - `DLC_24-1_Bounty_Office_Use_Computer_Scene`, `Bounty_Office_Computer_Sounds`
+
+**Scaleform movies** (12) - `SET_INPUT_EVENT`, `SHOW_OVERLAY`, `SET_ANALOG_STICK_INPUT`, `ADD_BOUNTY_TARGET`, `BAIL_BOUNTY`, `SET_MOUSE_INPUT`, `BOUNTY_COMPUTER`, `SET_GAMERNAME`, `SHOW_SCREEN`, `GET_CURRENT_ROLLOVER`, `HIDE_OVERLAY`, `GET_CURRENT_SELECTION`
+
+**Text labels** (3) - `NULL`, `MP_SPINLOADING`, `S24JAUD`
+
+**Hashed names** (1) - `appBailOffice`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`PLAYER_ID` (21), `SET_BIT` (21), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL` (21), `BEGIN_SCALEFORM_MOVIE_METHOD` (15), `CLEAR_BIT` (14), `END_SCALEFORM_MOVIE_METHOD` (13), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT` (11), `IS_CONTROL_JUST_PRESSED` (8), `CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER` (7), `TO_FLOAT` (7), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_LITERAL_STRING` (5), `GET_CONTROL_VALUE` (4), `WAIT` (3), `PLAYER_PED_ID` (3), `CLEAR_HELP` (2), `IS_USING_KEYBOARD_AND_MOUSE` (2), `SCALEFORM_MOVIE_METHOD_ADD_PARAM_FLOAT` (2), `GET_DISABLED_CONTROL_NORMAL` (2), `IS_CONTROL_PRESSED` (2), `IS_DISABLED_CONTROL_PRESSED` (2), `SET_SCRIPT_GFX_DRAW_ORDER` (2), `IS_PC_VERSION` (2), `GET_PLAYER_NAME` (2), `IS_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_READY` (2), `GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_INT` (2), `END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE` (2), `FLOOR` (2), `GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH` (1), `GET_HASH_KEY` (1), `NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME` (1)
+
+## Tuning constants
+
+Float literals in unique code: distances, timings, blend values.
+
+`565.887f` x1 · `-2688.762f` x1
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`BAIL_APP_WAIT`, `BAIL_APP_WAIT2`, `S24J_BHR_1A`, `_bw`, `BAIL_APP_ERR3`, `BAIL_APP_ERR2`, `BAIL_APP_ERR4`, `BAIL_APP_LAUNCH_Y`, `BAIL_APP_LAUNCH_N`, `S24J_BIN_1A`, `S24J_BHH_1A`, `S24J_BHL_1A`, `S24J_BHA_1A`, `S24J_BHM_1A`, `S24J_BHC_1A`, `S24J_BA1_1A`, `S24J_BA2_1A`, `S24J_BA3_1A`, `S24J_BCL1_1A`, `S24J_BCL2_1A`, `S24J_BCL3_1A`, `S24J_BCI1_1A`, `S24J_BCI2_1A`, `S24J_BCI3_1A`, `S24J_BIT1_1A`, `S24J_BIT2_1A`, `S24J_BIT3_1A`, `S24J_BP1_1A`, `S24J_BP2_1A`, `S24J_BP3_1A`
+
+---
+
+Source: `decompiled_scripts/appbailoffice.c`

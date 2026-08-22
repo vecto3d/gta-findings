@@ -1,0 +1,32 @@
+# am_mp_rpa_menu.c
+
+UI and menus script.
+
+| | |
+|---|---|
+| Category | UI and menus |
+| Total lines | 34,026 |
+| Functions | 469 (47 unique, 422 shared) |
+| Unique lines | 2,290 (6.7% of file) |
+
+## Assets
+
+**Sounds** (4) - `HUD_FRONTEND_DEFAULT_SOUNDSET`, `NAV_UP_DOWN`, `SELECT`, `CANCEL`
+
+**Text labels** (3) - `NULL`, `TWOSTRINGS`, `STRING`
+
+## Native vocabulary
+
+Most-called natives inside the code unique to this script:
+
+`SET_BIT` (37), `SET_INPUT_EXCLUSIVE` (27), `PLAYER_ID` (20), `DISABLE_CONTROL_ACTION` (16), `PLAYER_PED_ID` (11), `ENABLE_CONTROL_ACTION` (9), `CLEAR_BIT` (7), `HIDE_HUD_COMPONENT_THIS_FRAME` (7), `IS_USING_KEYBOARD_AND_MOUSE` (6), `PLAY_SOUND_FRONTEND` (6), `THEFEED_HIDE_THIS_FRAME` (5), `IS_CONTROL_PRESSED` (5), `IS_THIS_MODEL_A_HELI` (4), `IS_DISABLED_CONTROL_JUST_RELEASED` (4), `SET_PED_CONFIG_FLAG` (3), `IS_CONTROL_JUST_RELEASED` (2), `CLEAR_PED_TASKS` (2), `IS_PLAYER_CONTROL_ON` (2), `IS_PAUSE_MENU_ACTIVE` (2), `MP_TEXT_CHAT_DISABLE` (2), `IS_ENTITY_DEAD` (2), `IS_STRING_NULL_OR_EMPTY` (2), `GET_DISPLAY_NAME_FROM_VEHICLE_MODEL` (2), `NETWORK_IS_ACTIVITY_SESSION` (2), `IS_CONTROL_JUST_PRESSED` (1), `HAVE_CONTROLS_CHANGED` (1), `SET_USER_RADIO_CONTROL_ENABLED` (1), `IS_SYSTEM_UI_BEING_DISPLAYED` (1), `HIDE_HELP_TEXT_THIS_FRAME` (1), `REQUEST_STREAMED_TEXTURE_DICT` (1)
+
+## Other strings
+
+Literals whose consuming native was not classified:
+
+`RPA_MENU_O6`, `CONT_REQ_CD`, `BB_BACK`, `RPA_MENU_O3`, `RPA_MENU_K2`, `RPA_MENU_O3_D2`, `RPA_MENU_O6_D1`, `RPA_MENU_06_D2`, `RPA_MENU_O6_D`, `RPA_MENU_T`, `RPA_MENU_O1`, `RPA_MENU_O2`, `RPA_MENU_O4`, `RPA_MENU_O5`, `taxi`, `RPA_MENU_K1`, `RPA_MENU_K3`, `ShopUI_Title_Mckenzie_Field`, `RPA_MENU_O1_D`, `RPA_MENU_O1_D1`, `RPA_MENU_O2_D`, `RPA_MENU_O2_D1`, `RPA_MENU_O3_D`, `RPA_MENU_O3_D1`, `RPA_MENU_O4_D`, `RPA_MENU_O4_D1`, `RPA_MENU_O5_D`, `RPA_MENU_O5_D1`, `PI_BIK_DEAD`, `PIM_HRPA18`
+
+---
+
+Source: `decompiled_scripts/am_mp_rpa_menu.c`
