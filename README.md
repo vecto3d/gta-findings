@@ -64,6 +64,25 @@ which is 573,248. The vending machine came from the small end. So will the next 
 
 Full breakdown in [scripts/README.md](scripts/README.md).
 
+## Techniques worth knowing before you build
+
+Found by reading and surveying, not by string search. Each replaces something people
+normally hand-roll:
+
+- [animation-alignment](reference/animation-alignment.md) — ask the animation where
+  the ped should stand, and when it may be interrupted. No tuned offsets.
+- [move-networks](reference/move-networks.md) — input-responsive animation state
+  machines. The arcade love meter reuses the casino vault drilling network.
+- [audio](reference/audio.md#audio-scene-variables-the-underused-mechanism) — audio
+  scene variables driven by live values, not toggled states.
+- [tv-and-channels](features/tv-and-channels.md) — the named render target recipe.
+- [telescope](features/telescope.md) — `USE_SCRIPT_CAM_FOR_AMBIENT_POPULATION_ORIGIN_THIS_FRAME`,
+  the fix for empty streets under a scripted camera.
+- [ped-control-flags](features/ped-control-flags.md) — why your scripted animation
+  keeps getting interrupted.
+- [pause-menu-and-buttons](features/pause-menu-and-buttons.md) — add pages to the
+  game's own pause menu.
+
 ## Reference indexes
 
 Every asset name mapped back to the scripts using it — 3,137 animation dictionaries,
