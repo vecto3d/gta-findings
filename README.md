@@ -66,6 +66,12 @@ Full breakdown in [scripts/README.md](scripts/README.md).
 
 ## Techniques worth knowing before you build
 
+**[TECHNIQUES.md](TECHNIQUES.md) — the full index.** Every non-obvious technique
+recovered, grouped by area, each row naming what it replaces. Start there if you know
+what you want to build.
+
+Highlights:
+
 Found by reading and surveying, not by string search. Each replaces something people
 normally hand-roll:
 
