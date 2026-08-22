@@ -15,6 +15,10 @@ Not everything here is known to the same standard. Three distinct levels:
 
 Every script in this repo is **parsed**. Almost none are **read**.
 
+**Parsed does not mean read.** The extractor recovers identifiers, counts and
+constants from every line. It recovers almost no logic. Do not read "all 1,156
+scripts processed" as "all 1,156 scripts understood".
+
 ## Parsed: all 1,156
 
 Every line of all 168.6M was passed through the extractor. Nothing was sampled and
@@ -48,7 +52,13 @@ Read in the parts that mattered, not end to end:
 - `letterscraps.c` — collection and document-viewer state machines
 - `spaceshipparts.c` — the pickup registration path
 
-That is roughly **2,500 lines out of 168,668,190**.
+That is roughly **2,500 lines**. Measured against the part that matters — the
+12,426,035 lines left after removing all duplicated library code — that is
+**0.02%**.
+
+Deduplication did not make this corpus readable. It made it 13x smaller and still
+far too large. What it made possible was *targeting*: knowing which 11 files were
+worth opening, instead of guessing.
 
 Small, but it is where every non-obvious finding in this repo came from. The two
 alignment natives in [animation-alignment](../reference/animation-alignment.md), the
