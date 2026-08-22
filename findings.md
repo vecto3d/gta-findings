@@ -795,3 +795,162 @@ Most-toggled: `ch_cutscene_casino` (496), `smboat` (146), `hei_carrier` and
 `hei_bi_hw1_13_door` (137), `gr_Heist_Yacht2_enginrm` (137).
 
 Useful when a script needs a map piece that is not loaded by default.
+
+---
+
+# Exhaustive pass — features missed by prefix sweeps
+
+Categorising all 1156 scripts left a large "uncategorised" bucket, and that is
+where the remaining features were hiding. Full listing in
+[script-inventory.md](script-inventory.md).
+
+## New minigames
+
+- **`three_card_poker.c` (568K)** — a casino game missed entirely by the
+  `casino_*` prefix sweep. Uses only `instructional_buttons`.
+- **`word_hack.c` (80K)** — standalone word-based hacking minigame.
+- **`circuitblockhack.c` (48K)** — standalone circuit-block hacking minigame,
+  pairs with the `DLC_24-2/DLC_24-2_Circuit_Hack` audio bank.
+- **`puzzle.c` (7.7M)** — large, boilerplate-heavy.
+
+Both hack scripts are small and self-contained, unlike the heist versions buried
+in 10 MB mission controllers. These are the ones to read.
+
+## `chop.c` (212K) — complete companion-dog system
+
+The richest single find of this pass. Full animal AI for a rottweiler:
+
+- `creatures@rottweiler@move` — locomotion
+- `creatures@rottweiler@tricks@` — trick animations
+- `creatures@rottweiler@indication@` — the scent-indication pose
+- `creatures@rottweiler@melee@streamed_taunts@` — attack
+- `creatures@rottweiler@amb@world_dog_barking@enter` / `@idle_a` / `@exit`
+- `creatures@rottweiler@amb@sleep_in_kennel@`
+- `creatures@rottweiler@in_vehicle@std_car` — riding in a car
+- `misschop_vehicleenter_exit` — getting in and out
+
+Everything a K9 unit or companion pet needs, including the scent indication that
+police K9 scripts normally fake.
+
+## `gpb_*` — 14 street characters / strangers
+
+All exactly 68K (Pamela Drake 72K), one script each, identical structure:
+`andymoon`, `baygor`, `billbinder`, `clinton`, `griff`, `jane`, `jerome`,
+`jesse`, `mani`, `mime`, `pameladrake`, `superhero`, `tonya`, `zombie`.
+
+No anim dicts — they run on scenarios and speech. Together with the four `pb_*`
+performers, that is 18 worked examples of a wandering ambient character.
+
+## Bail bond bounty hunting
+
+`bailbond1.c` through `bailbond4.c` (~930K each) plus `bailbond_launcher.c`
+(264K) and `postkilled_bailbond2.c`. Four complete bounty targets with a
+launcher that gates availability — a ready-made bounty job structure.
+
+## World systems worth stealing
+
+- **`restrictedareas.c` (40K)** — restricted-zone enforcement. Small.
+- **`flyunderbridges.c` (52K)** — tracks flying under bridges, `MIDSIZED_MESSAGE`.
+  The pattern generalises to any "player did a stunt" detector.
+- **`forsalesigns.c`** — property for-sale signs.
+- **`vehicle_plate.c`** and **`vehicle_stealth_mode.c` (28K)**.
+- **`laptop_trigger.c` (128K)** and **`atm_trigger.c` (112K)** — prop-triggered
+  interactions, the same object-brain idea as `ob_*`.
+- **`save_anywhere.c`**, **`savegame_bed.c`** — save points.
+- **`wp_partyboombox.c` (4K)** — boombox as a carried weapon/prop.
+- **`mp_player_damage_numbers.c`** — floating damage numbers.
+- **`mp_awards.c`**, **`mp_unlocks.c`** — award and unlock systems.
+- **`shrinkletter.c` (40K)** — owns the `PSYCHOLOGY_REPORT` scaleform.
+- **`ufo.c` (68K)** — larger than `ambient_ufos.c`.
+- **`photographywildlife.c`** — wildlife photography objectives.
+- **`murdermystery.c`** — has its own `vintage_filmcan` prop.
+- **`dialogue_handler.c`**, **`localpopulator.c`**, **`spawn_activities.c`**,
+  **`walking_ped.c`**, **`idlewarper.c`** — population and dialogue plumbing.
+- **`minigame_ending_stinger.c`**, **`minigame_stats_tracker.c`** — the shared
+  ending/results pieces every activity uses.
+- **`celebrations.c` (9.1M)**, **`celebration_editor.c`** — the celebration
+  sequence driver behind `MP_CELEBRATION`.
+
+## Racing variants beyond `fm_race_controler`
+
+`country_race.c`, `offroad_races.c`, `stunt_plane_races.c`, `mission_race.c`,
+`mg_race_to_point.c`, `triathlonsp.c`.
+
+`mg_race_to_point.c` is the simplest race form — a single point-to-point dash.
+
+## Heist planning boards
+
+`heist_island_planning.c`, `kortz_planning.c`, `tuner_planning.c`,
+`vehrob_planning.c`, plus `gb_casino_heist_planning.c` found earlier. Each drives
+a corkboard interface for choosing approach and crew.
+
+## Nightlife
+
+`nightclubpeds.c`, `sclub_front_bouncer.c`, `stripperhome.c`,
+`si_dancing_activity.c`, `music_studio_smoking.c`, `mansion_club_bar.c`,
+`fairgroundhub.c`, `luxe_veh_activity.c`.
+
+`sclub_front_bouncer.c` is the door-bouncer behaviour, and the
+`BOUNCER_EJECT_GENERIC` speech context (745 uses, by far the most-used speech
+line in the repo) belongs to it.
+
+# More native families
+
+## Task vocabulary
+
+Most-used `TASK_*` natives, which is effectively R* AI vocabulary:
+
+`TASK_LEAVE_ANY_VEHICLE` (16340), `TASK_SYNCHRONIZED_SCENE` (7998),
+`TASK_PLAY_ANIM` (7642), `TASK_PERFORM_SEQUENCE` (3239),
+`TASK_GO_STRAIGHT_TO_COORD` (3023), `TASK_FOLLOW_NAV_MESH_TO_COORD` (2990),
+`TASK_LOOK_AT_ENTITY` (2343), `TASK_ENTER_VEHICLE` (2125),
+`TASK_HELI_MISSION` (1849), `TASK_PLAY_ANIM_ADVANCED` (1463),
+`TASK_START_SCENARIO_IN_PLACE` (1071), `TASK_COMBAT_PED` (1021),
+`TASK_VEHICLE_FOLLOW_WAYPOINT_RECORDING` (992), `TASK_CLEAR_LOOK_AT` (973),
+`TASK_SMART_FLEE_PED` (954), `TASK_TURN_PED_TO_FACE_ENTITY` (901),
+`TASK_COMBAT_HATED_TARGETS_AROUND_PED` (844), `TASK_ACHIEVE_HEADING` (733),
+`TASK_GO_TO_COORD_ANY_MEANS` (681), `TASK_VEHICLE_DRIVE_TO_COORD` (659),
+`TASK_BOAT_MISSION` (614), `TASK_PLANE_MISSION` (563),
+`TASK_SMART_FLEE_COORD` (507), `TASK_PLANE_TAXI` (504),
+`TASK_VEHICLE_TEMP_ACTION` (496), `TASK_WANDER_STANDARD` (374).
+
+`TASK_PERFORM_SEQUENCE` at 3239 is notable — R* chains tasks into sequences
+rather than driving each one from script state.
+
+## Pre-authored paths
+
+- **154 distinct waypoint recordings** (`REQUEST_WAYPOINT_RECORDING`) — named
+  vehicle routes, e.g. `ARM2`, `ARM2_FIRE`, `AccomMarching01`, `BB_JEW_1`.
+  Driven with `TASK_VEHICLE_FOLLOW_WAYPOINT_RECORDING` (992 uses).
+- **146 distinct vehicle recordings** (`REQUEST_VEHICLE_RECORDING`) — full
+  playback of a recorded drive, used for scripted traffic and chases.
+
+Both are shipped game data, so a FiveM script can play them back without
+authoring anything.
+
+## Ped natives, by call count
+
+`SET_PED_COMPONENT_VARIATION` (104718), `SET_PED_CONFIG_FLAG` (37034),
+`SET_PED_CAN_SWITCH_WEAPON` (16305), `SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE`
+(14255), `SET_PED_RESET_FLAG` (10314), `SET_PED_COMBAT_ATTRIBUTES` (8092),
+`SET_PED_PROP_INDEX` (6843), `SET_PED_STEALTH_MOVEMENT` (5544),
+`SET_PED_MAX_MOVE_BLEND_RATIO` (5014), `SET_PED_DEFAULT_COMPONENT_VARIATION`
+(3606), `SET_PED_INTO_VEHICLE` (3302), `SET_PED_KEEP_TASK` (2306),
+`SET_PED_HEAD_BLEND_DATA` (2226), `SET_PED_CAN_BE_TARGETTED` (1903).
+
+## Vehicle natives, by call count
+
+`SET_VEHICLE_DOORS_LOCKED_FOR_ALL_PLAYERS` (18680), `SET_VEHICLE_MOD` (14049),
+`SET_VEHICLE_DISABLE_TOWING` (13475), `SET_VEHICLE_ON_GROUND_PROPERLY` (13114),
+`SET_VEHICLE_DOORS_LOCKED` (13103), `SET_VEHICLE_COLOURS` (12628),
+`SET_VEHICLE_EXTRA` (10442), `SET_VEHICLE_EXTRA_COLOURS` (10106),
+`SET_VEHICLE_ENGINE_ON` (9028), `SET_VEHICLE_WEAPON_RESTRICTED_AMMO` (7174),
+`SET_VEHICLE_DOORS_LOCKED_FOR_PLAYER` (5955), `SET_VEHICLE_MOD_KIT` (4078).
+
+## Namespace weighting
+
+`PLAYER` (2.76M), `MISC` (1.42M), `ENTITY` (1.36M), `FILES` (1.20M),
+`PED` (1.14M), `SYSTEM` (736K), `VEHICLE` (699K), `PAD` (691K),
+`NETWORK` (582K), `HUD` (367K), `GRAPHICS` (194K), `TASK` (188K),
+`STREAMING` (188K), `CAM` (186K), `OBJECT` (127K), `AUDIO` (124K),
+`DATAFILE` (105K), `STATS` (80K), `DECORATOR` (69K), `SCRIPT` (56K).
