@@ -531,3 +531,66 @@ scaleform example.
 Editor UIs rather than mechanics. Their one reusable asset is `camera_gallery`,
 and they are the best reference for prop-placement tooling if a server ever
 needs an in-game editor.
+
+## Activity anim dictionaries (`mini@` / `oddjobs@`)
+
+Listing every `mini@` and `oddjobs@` dict repo-wide is a better sweep than the
+rare-name trick for animations, because these prefixes are activity-specific by
+convention. The high-value results, with the script that implements each:
+
+### `mini@cpr@` — CPR / revive (`fanatic1.c`)
+
+Four dicts: `mini@cpr@char_a@cpr_str`, `char_a@cpr_def`, `char_b@cpr_str`,
+`char_b@cpr_def` (`_str` = struggling, `_def` = default; `char_a`/`char_b` are
+the two roles — medic and patient).
+
+Anims: `cpr_intro`, `cpr_pumpchest`.
+
+A two-person synced revive animation, exactly what an EMS script needs. The
+paired `char_a`/`char_b` structure means medic and patient can be driven
+together as a sync scene.
+
+### `mini@safe_cracking` — full safe-cracking minigame
+
+Used by `business_battles.c` and all three `fm_mission_controller*` variants.
+The complete anim set is present:
+
+- `step_into` — approach
+- `idle_base`, `idle_look_around`, `idle_heavy_breathe` — waiting states
+- `dial_turn_clock_fast`, `dial_turn_anti_fast` — the dial in both directions
+- `DOOR_OPEN_SUCCEED_STAND`, `DOOR_OPEN_SUCCEED_STAND_SAFE` — success
+
+Everything needed for a dial-turning safe minigame, including nervous idles.
+`gb_biker_safecracker.c` is the other implementation.
+
+### `mini@repair` — vehicle repair (`fbi4_prep2.c`)
+
+Single anim `fixing_a_ped`. The mechanic-job animation.
+
+### `mini@biotech@blowtorch_str` / `_def` — cutting
+
+`fbi5a.c`, `fm_mission_controller_2020.c`, `public_mission_controller.c`.
+Blowtorch/cutting for break-ins.
+
+### Others
+
+- `mini@racing@bike@`, `mini@racing@quad@` — `offroad_races.c`
+- `mini@ears_defenders` — `range_modern.c`, ear defenders at the range
+- `mini@arm_wrestling`, `mini@darts` (+ `dartsintro`, `dartsintro_alt1`,
+  `dartsoutro`), `mini@golf` (+ `golfclub_bag`, `golfclubhouse`),
+  `mini@tennis` (+ `@female`, `tennisexit@male`/`@female`), `mini@shoot_range`
+
+## Sweeps that were low yield
+
+Recorded so they are not repeated:
+
+- **Rare anim dicts (`<=2` scripts)** — returns mostly standard
+  `amb@world_human_*` scenario clipsets (guard patrol, hang out street, stand
+  impatient, smoking, tourist mobile). These are well-known scenario animations,
+  not hidden mechanics. The `mini@`/`oddjobs@` prefix sweep above is the better
+  tool.
+- **Rare PTFX assets (`<=2` scripts)** — almost entirely event/DLC-specific
+  effect bundles: `proj_xmas_firework`, `scr_indep_parachute`,
+  `scr_indep_wheelsmoke`, `scr_mp_tankbattle`, `scr_xm_stealcar`,
+  `scr_bike_contraband`, `scr_impexp_ploughed`, `scr_tn_phantom`. Useful only if
+  chasing a specific effect; no general mechanics.
