@@ -19,7 +19,7 @@ values, offsets — is taken verbatim from the decompiled source.
 ## Read this first
 
 [analysis/coverage.md](analysis/coverage.md) — the honest accounting. All 1,156
-scripts are **parsed**; 16 are **read**; 1 is **verified** against a running game.
+scripts are **parsed**; 17 are **read**; 1 is **verified** against a running game.
 The tables in every script document are extracted fact. The one-line descriptions
 above them are inference.
 

@@ -10,7 +10,7 @@ Not everything here is known to the same standard. Three distinct levels:
 | Depth | Meaning | Scripts |
 |---|---|---:|
 | **Parsed** | Every function split out, deduped, every string typed by its consuming native | 1,156 |
-| **Read** | Source opened and followed line by line | 16 |
+| **Read** | Source opened and followed line by line | 17 |
 | **Verified** | Behaviour confirmed by building it and running it | 1 |
 
 Every script in this repo is **parsed**. Almost none are **read**.
@@ -31,7 +31,7 @@ nothing was skipped. For each script this yields, restricted to code unique to i
 
 This is exhaustive for **identifiers**. It is silent on **logic**.
 
-## Read: 16
+## Read: 17
 
 Fully read, unique code start to finish:
 
@@ -56,6 +56,7 @@ Read in the parts that mattered, not end to end:
 - `ob_telescope.c` — camera setup, teardown and population origin
 - `ob_jukebox.c` — station table, audio scene ducking, menu sounds
 - `ob_mp_stripper.c` — paired facial animation on networked peds
+- `ob_mp_shower_med.c` — property dispatch table, no new mechanics
 
 That is roughly **2,500 lines**. Measured against the part that matters — the
 12,426,035 lines left after removing all duplicated library code — that is
