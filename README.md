@@ -19,11 +19,18 @@ values, offsets — is taken verbatim from the decompiled source.
 ## Read this first
 
 [analysis/coverage.md](analysis/coverage.md) — the honest accounting. All 1,156
-scripts are **parsed**; 3 are **read**; 1 is **verified** against a running game.
+scripts are **parsed**; 11 are **read**; 1 is **verified** against a running game.
 The tables in every script document are extracted fact. The one-line descriptions
 above them are inference.
 
 ## Start here
+
+Read [object-brain-pattern](features/object-brain-pattern.md) first. All 26 prop
+interactions are one skeleton with a different middle, and it is the most portable
+structure in the corpus.
+
+Then [animation-alignment](reference/animation-alignment.md) — two natives that
+replace the offset-and-timing guesswork most ports are built on.
 
 Strongest build candidates, roughly easiest first:
 
@@ -35,6 +42,7 @@ Strongest build candidates, roughly easiest first:
 - [safe-cracking](features/safe-cracking.md) — full dial-turning set, nothing missing
 - [chop-companion-dog](features/chop-companion-dog.md) — complete K9 including scent pose
 - [taxi](features/taxi.md) — two scaleforms, no UI to write
+- [animated-door-collision](features/animated-door-collision.md) — moving collision on animated props
 - [vending-machine](features/vending-machine.md) — the only verified document here
 
 ## Where the value is

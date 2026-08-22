@@ -10,7 +10,7 @@ Not everything here is known to the same standard. Three distinct levels:
 | Depth | Meaning | Scripts |
 |---|---|---:|
 | **Parsed** | Every function split out, deduped, every string typed by its consuming native | 1,156 |
-| **Read** | Source opened and followed line by line | 3 |
+| **Read** | Source opened and followed line by line | 11 |
 | **Verified** | Behaviour confirmed by building it and running it | 1 |
 
 Every script in this repo is **parsed**. Almost none are **read**.
@@ -27,13 +27,33 @@ nothing was skipped. For each script this yields, restricted to code unique to i
 
 This is exhaustive for **identifiers**. It is silent on **logic**.
 
-## Read: 3
+## Read: 11
 
-- `ob_cashregister.c` — 625 lines, read fully
-- `ob_poledancer.c` — 170 lines, read fully
-- `ob_vend1.c` — several hundred lines of ~80,000, read in the regions that mattered
+Fully read, unique code start to finish:
 
-That is roughly **1,200 lines out of 168,668,190**, or 0.0007%.
+| Script | Unique lines | What it gave |
+|---|---:|---|
+| `ob_airdancer.c` | 54 | The bare object-brain skeleton |
+| `ob_abattoircut.c` | 55 | Mission gating by thread count |
+| `ob_foundry_cauldron.c` | 93 | Looped particles, interior guards |
+| `ob_abatdoor.c` | 117 | The animated-collision-proxy trick |
+| `ob_cashregister.c` | 111 | Breakable prop, cash spawning |
+| `ob_poledancer.c` | 151 | Ambient performer, de-synced loops |
+| `ob_mp_bed_low.c` | 332 | Full synchronised-scene interaction |
+| `ob_mr_raspberry_jam.c` | 396 | The shared safehouse activity engine |
+
+Read in the parts that mattered, not end to end:
+
+- `ob_vend1.c` — the interaction and cleanup paths, a few hundred lines of ~80,000
+- `letterscraps.c` — collection and document-viewer state machines
+- `spaceshipparts.c` — the pickup registration path
+
+That is roughly **2,500 lines out of 168,668,190**.
+
+Small, but it is where every non-obvious finding in this repo came from. The two
+alignment natives in [animation-alignment](../reference/animation-alignment.md), the
+collision-proxy technique, and the fact that nine safehouse scripts are one engine
+were all invisible to extraction and obvious on reading.
 
 ## Verified: 1
 
