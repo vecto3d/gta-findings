@@ -62,3 +62,49 @@ Recorded so they are not repeated:
   asset is the `camera_gallery` scaleform.
 - **Launchers** — 32 `launcher_*.c`, all trigger and availability wrappers. A
   model for gating content by time, location and player state; no assets.
+
+
+## Corrections from the full sweep
+
+Three claims made in earlier passes turned out to be wrong once every script was
+parsed and deduplicated. Recording them because each one is a trap the obvious
+method walks straight into.
+
+**"The seating scripts are duplicate clones."** Wrong twice. All 52 have unique code,
+and they are the canonical reference for animation alignment. They *look* empty to a
+string sweep because they pass anim dictionaries through helper functions instead of
+naming them inline. Low asset count does not mean low value — see
+[seating](../features/seating.md).
+
+**"The safehouse activities are nine separate implementations."** They are one engine
+that branches on the model of the prop it was attached to. Porting one gets all nine.
+
+**"`ob_*` is the complete set of prop interactions."** `atm_trigger.c` and
+`laptop_trigger.c` run the identical object brain pattern without the prefix. Prefix
+sweeps are a starting point, not a census.
+
+The common thread: **naming and file layout are not evidence.** Three of the four
+worst mistakes in this repo came from trusting a filename over the code, and the
+fourth came from trusting a string count.
+
+## What a low asset count actually means
+
+The per-script documents show an asset count. It is tempting to read a low one as
+"nothing here". Measured across the corpus, assets per script by category:
+
+| Category | Assets per script |
+|---|---:|
+| Creators | 180 |
+| Races | 130 |
+| MP freemode | 115 |
+| Object brains | 16 |
+| Seating | 4 |
+| Dev and test | 1 |
+
+Object brains average 16 assets and are the most portable category in the game.
+Seating averages 4 and taught us the alignment technique. Creators average 180 and
+are close to useless for a server.
+
+**Asset count measures how much a script names, not how much it does.** The only
+category where a low count really does mean nothing is `dev-test`, where 65 of 88
+scripts have no unique code at all.

@@ -23,7 +23,7 @@ constants that survive removing every function body shared with other scripts.
 | [Phone apps](phone-apps/) | 40 | 252,728 |
 | [SP strangers and freaks](sp-strangers/) | 87 | 234,865 |
 | [Vehicles](vehicles/) | 25 | 230,128 |
-| [Seating clones](seating-clones/) | 52 | 176,620 |
+| [Seating and sitting](seating/) | 52 | 176,620 |
 | [Ambient world](ambient-world/) | 41 | 112,665 |
 | [Random events](random-events/) | 38 | 81,050 |
 | [Dev and test harnesses](dev-test/) | 88 | 42,308 |
