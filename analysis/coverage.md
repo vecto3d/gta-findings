@@ -10,7 +10,7 @@ Not everything here is known to the same standard. Three distinct levels:
 | Depth | Meaning | Scripts |
 |---|---|---:|
 | **Parsed** | Every function split out, deduped, every string typed by its consuming native | 1,156 |
-| **Read** | Source opened and followed line by line | 11 |
+| **Read** | Source opened and followed line by line | 14 |
 | **Verified** | Behaviour confirmed by building it and running it | 1 |
 
 Every script in this repo is **parsed**. Almost none are **read**.
@@ -31,7 +31,7 @@ nothing was skipped. For each script this yields, restricted to code unique to i
 
 This is exhaustive for **identifiers**. It is silent on **logic**.
 
-## Read: 11
+## Read: 14
 
 Fully read, unique code start to finish:
 
@@ -51,6 +51,9 @@ Read in the parts that mattered, not end to end:
 - `ob_vend1.c` — the interaction and cleanup paths, a few hundred lines of ~80,000
 - `letterscraps.c` — collection and document-viewer state machines
 - `spaceshipparts.c` — the pickup registration path
+- `ob_franklin_tv.c` — entry guards and the remote-control gate
+- `ob_tv.c` — the render target and TV channel paths
+- `ob_telescope.c` — camera setup, teardown and population origin
 
 That is roughly **2,500 lines**. Measured against the part that matters — the
 12,426,035 lines left after removing all duplicated library code — that is
