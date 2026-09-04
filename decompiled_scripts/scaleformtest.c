@@ -1,0 +1,420 @@
+#region Local Var
+	var uLocal_0 = 0;
+	var uLocal_1 = 0;
+	int iLocal_2 = 0;
+	int iLocal_3 = 0;
+	int iLocal_4 = 0;
+	int iLocal_5 = 0;
+	int iLocal_6 = 0;
+	int iLocal_7 = 0;
+	int iLocal_8 = 0;
+	int iLocal_9 = 0;
+	int iLocal_10 = 0;
+	int iLocal_11 = 0;
+	var uLocal_12 = 0;
+	var uLocal_13 = -2;
+	var uLocal_14 = -2;
+	var uLocal_15 = -2;
+	var uLocal_16 = 5;
+	var uLocal_17 = 0;
+	var uLocal_18 = 0;
+	var uLocal_19 = 0;
+	var uLocal_20 = 0;
+	var uLocal_21 = 0;
+	var uLocal_22 = 2;
+	var uLocal_23 = 0;
+	var uLocal_24 = 0;
+	var uLocal_25 = 2;
+	var uLocal_26 = 0;
+	var uLocal_27 = 0;
+	var uLocal_28 = 2;
+	var uLocal_29 = 0;
+	var uLocal_30 = 0;
+	float fLocal_31 = 0f;
+	var uLocal_32 = 0;
+	var uLocal_33 = 0;
+	int iLocal_34 = 0;
+	int iLocal_35 = 0;
+	int iLocal_36 = 0;
+#endregion
+
+void __EntryFunction__()
+{
+	iLocal_2 = 1;
+	iLocal_3 = 134;
+	iLocal_4 = 134;
+	iLocal_5 = 1;
+	iLocal_6 = 1;
+	iLocal_7 = 1;
+	iLocal_8 = 134;
+	iLocal_9 = 1;
+	iLocal_10 = 12;
+	iLocal_11 = 12;
+	fLocal_31 = 0.001f;
+	iLocal_34 = -1;
+	if (CAM::IS_SCREEN_FADED_OUT())
+	{
+		CAM::DO_SCREEN_FADE_IN(500);
+	}
+	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(3))
+	{
+		func_5();
+	}
+	iLocal_36 = GRAPHICS::REQUEST_SCALEFORM_MOVIE("instructional_buttons");
+	while (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(iLocal_36))
+	{
+		SYSTEM::WAIT(0);
+	}
+	while (true)
+	{
+		GRAPHICS::DRAW_SCALEFORM_MOVIE_FULLSCREEN(iLocal_36, 255, 255, 255, 0, 0);
+		func_4();
+		func_1(iLocal_35, iLocal_36);
+		SYSTEM::WAIT(0);
+	}
+}
+
+void func_1(int iParam0, int iParam1)
+{
+	switch (iParam0)
+	{
+		case 0:
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "CLEAR_ALL");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_CLEAR_SPACE");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(200);
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 191, true));
+			func_2("PRESS A");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(1);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 194, true));
+			func_2("PRESS B");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(2);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 193, true));
+			func_2("PRESS X");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(3);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 192, true));
+			func_2("PRESS Y");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "DRAW_INSTRUCTIONAL_BUTTONS");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_BACKGROUND_COLOUR");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(80);
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			iLocal_35 = -1;
+			break;
+		
+		case 1:
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "CLEAR_ALL");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_CLEAR_SPACE");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(200);
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 187, true));
+			func_2("DOWN");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(1);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 188, true));
+			func_2("UP");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(2);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 190, true));
+			func_2("LEFT");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(3);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 189, true));
+			func_2("RIGHT");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "DRAW_INSTRUCTIONAL_BUTTONS");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_BACKGROUND_COLOUR");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(80);
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			iLocal_35 = -1;
+			break;
+		
+		case 2:
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "CLEAR_ALL");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_CLEAR_SPACE");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(200);
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_DATA_SLOT");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			func_3(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2, 202, true));
+			func_2("BACK");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "DRAW_INSTRUCTIONAL_BUTTONS");
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam1, "SET_BACKGROUND_COLOUR");
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
+			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(80);
+			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
+			iLocal_35 = -1;
+			break;
+		
+		default:
+			break;
+	}
+}
+
+void func_2(char* sParam0)
+{
+	GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING(sParam0);
+	GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+}
+
+void func_3(char* sParam0)
+{
+	GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_PLAYER_NAME_STRING(sParam0);
+}
+
+void func_4()
+{
+	if (Global_21628 == 0)
+	{
+		if (((((((((PAD::IS_CONTROL_PRESSED(2, 189) || PAD::IS_CONTROL_PRESSED(2, 190)) || PAD::IS_CONTROL_PRESSED(2, 188)) || PAD::IS_CONTROL_PRESSED(2, 187)) || PAD::IS_CONTROL_PRESSED(2, 205)) || PAD::IS_CONTROL_PRESSED(2, 206)) || PAD::IS_CONTROL_PRESSED(2, 207)) || PAD::IS_CONTROL_PRESSED(2, 208)) || PAD::IS_CONTROL_PRESSED(2, 201)) || PAD::IS_CONTROL_PRESSED(2, 202))
+		{
+			Global_21628 = 1;
+			SYSTEM::SETTIMERA(0);
+		}
+	}
+	else if (SYSTEM::TIMERA() > 50)
+	{
+		Global_21628 = 0;
+	}
+	if (Global_21628 == 0)
+	{
+		if (PAD::IS_CONTROL_PRESSED(2, 217))
+		{
+			iLocal_35 = 1;
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 189))
+		{
+			iLocal_35 = 2;
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 190))
+		{
+			iLocal_35 = 2;
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 205))
+		{
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 206))
+		{
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 207))
+		{
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 208))
+		{
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 188))
+		{
+			iLocal_35 = 2;
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 187))
+		{
+			iLocal_35 = 2;
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 201))
+		{
+			iLocal_35 = 1;
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 202))
+		{
+			iLocal_35 = 0;
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 203))
+		{
+			iLocal_35 = 1;
+		}
+		if (PAD::IS_CONTROL_PRESSED(2, 204))
+		{
+			iLocal_35 = 1;
+		}
+	}
+}
+
+void func_5()
+{
+	func_6(0);
+	MISC::SET_GAME_PAUSED(false);
+	GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&iLocal_36);
+	SCRIPT::TERMINATE_THIS_THREAD();
+}
+
+void func_6(bool bParam0)
+{
+	if (bParam0)
+	{
+		func_13();
+		if (Global_21649.f_1 == 10 || Global_21649.f_1 == 9)
+		{
+			MISC::SET_BIT(&Global_9503, 16);
+		}
+		Global_21649.f_1 = 1;
+		if (func_12(0))
+		{
+			func_7(0);
+		}
+	}
+	else if (Global_21649.f_1 == 1)
+	{
+		if (!Global_21649.f_1 == 0)
+		{
+			Global_21649.f_1 = 3;
+		}
+	}
+}
+
+void func_7(int iParam0)
+{
+	if (func_11())
+	{
+		return;
+	}
+	if (Global_21882)
+	{
+		if (func_10())
+		{
+			func_9(1, 1);
+		}
+		else
+		{
+			func_9(0, 0);
+		}
+	}
+	if (Global_21649.f_1 == 10 || Global_21649.f_1 == 9)
+	{
+		MISC::SET_BIT(&Global_9503, 16);
+	}
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
+	{
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
+	}
+	Global_23023 = 5;
+	if (iParam0 == 1)
+	{
+		MISC::SET_BIT(&Global_9502, 30);
+	}
+	else
+	{
+		MISC::CLEAR_BIT(&Global_9502, 30);
+	}
+	if (!func_8())
+	{
+		Global_21649.f_1 = 3;
+	}
+}
+
+int func_8()
+{
+	if (Global_21649.f_1 == 1 || Global_21649.f_1 == 0)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+void func_9(bool bParam0, bool bParam1)
+{
+	if (bParam0)
+	{
+		if (func_12(0))
+		{
+			Global_21882 = 1;
+			if (bParam1)
+			{
+				MOBILE::GET_MOBILE_PHONE_POSITION(&Global_21586);
+			}
+			Global_21577 = { Global_21595[Global_21594 /*3*/] };
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21577);
+		}
+	}
+	else if (Global_21882 == 1)
+	{
+		Global_21882 = 0;
+		Global_21577 = { Global_21602[Global_21594 /*3*/] };
+		if (bParam1)
+		{
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21586);
+		}
+		else
+		{
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21577);
+		}
+	}
+}
+
+bool func_10()
+{
+	return BitTest(Global_1964670, 5);
+}
+
+bool func_11()
+{
+	return BitTest(Global_1964670, 19);
+}
+
+int func_12(int iParam0)
+{
+	if (iParam0 == 1)
+	{
+		if (Global_21649.f_1 > 3)
+		{
+			if (BitTest(Global_9502, 14))
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
+	{
+		return 1;
+	}
+	if (Global_21649.f_1 > 3)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+void func_13()
+{
+	if (Global_21649.f_1 == 9 || Global_21649.f_1 == 10)
+	{
+		Global_23076 = 0;
+		Global_23072 = 1;
+	}
+}
+
